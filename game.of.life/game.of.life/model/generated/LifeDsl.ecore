@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="lifeDsl" nsURI="http://www.of.game/life/LifeDsl" nsPrefix="lifeDsl">
+  <eClassifiers xsi:type="ecore:EClass" name="Model">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="grid" eType="#//InitialGrid"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rules" upperBound="-1"
+        eType="#//EvolutionRules" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InitialGrid">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rows" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="columns" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cellsX" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cellsY" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EvolutionRules">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="#//DieAliveUnit"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" eType="#//Operator"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="numberOfLiveNeighbors"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Operator">
+    <eLiterals name="LT" literal="&lt;"/>
+    <eLiterals name="EQ" value="1" literal="="/>
+    <eLiterals name="GT" value="2" literal=">"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="DieAliveUnit">
+    <eLiterals name="DIE" literal="die"/>
+    <eLiterals name="LIVE" value="1" literal="live"/>
+    <eLiterals name="BECOME_ALIVE" value="2" literal="become alive"/>
+  </eClassifiers>
+</ecore:EPackage>

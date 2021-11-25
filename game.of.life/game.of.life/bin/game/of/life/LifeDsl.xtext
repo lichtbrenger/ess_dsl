@@ -1,0 +1,33 @@
+grammar game.of.life.LifeDsl with org.eclipse.xtext.common.Terminals
+
+generate lifeDsl "http://www.of.game/life/LifeDsl"
+
+Model:
+	'InitialGrid' grid = InitialGrid
+	'EvolutionRules' (rules += EvolutionRules)* 
+;
+
+InitialGrid: 
+	'Rows:' rows = INT 
+	'Columns:' columns = INT
+	'CellsAliveX:' cellsX = STRING
+	'CellsAliveY:' cellsY = STRING
+;
+
+EvolutionRules:
+	'Rule:' name = DieAliveUnit
+	'ComparisonOperator:' operator = Operator
+	'NumberOfLiveNeighbors:' numberOfLiveNeighbors = INT
+;
+
+enum Operator:
+	LT = '<' |
+	EQ = '=' |
+	GT = '>'
+;
+
+enum DieAliveUnit:
+ DIE = 'die' |
+ LIVE = 'live' |
+ BECOME_ALIVE = 'become alive'
+;

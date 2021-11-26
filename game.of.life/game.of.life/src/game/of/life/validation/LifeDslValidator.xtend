@@ -3,7 +3,10 @@
  */
 package game.of.life.validation
 
+import game.of.life.lifeDsl.DieAliveUnit
+import game.of.life.lifeDsl.EvolutionRules
 import game.of.life.lifeDsl.Model
+import game.of.life.lifeDsl.Operator
 import org.eclipse.xtext.validation.Check
 
 /**
@@ -13,7 +16,7 @@ import org.eclipse.xtext.validation.Check
  */
 class LifeDslValidator extends AbstractLifeDslValidator {
 	
-@Check
+	@Check
     def checkDoubleInitialGrids(Model root) {
         var glist = root.grids // lists start at position 0
         for (var i = 0; i < glist.size; i++) {
@@ -28,4 +31,32 @@ class LifeDslValidator extends AbstractLifeDslValidator {
         }
     }
 	
+	@Check
+    def checkDieAliveUnit(EvolutionRules rules) {
+            if (rules !== null) {
+                switch (rules.name) {
+                    case DieAliveUnit::DIE:
+                    	if (
+                    		rules.numberOfLiveNeighbors == 3 
+                    		&& (
+                    			rules.operator == Operator::L 
+                    			|| rules.operator == Operator::EQ
+                    		)
+                    	) {
+                    		error("Neighbors less than or equal to 3 not
+                                allowed to die", null)
+                    	}
+                    case DieAliveUnit::LIVE:
+                        if (rules.numberOfLiveNeighbors != 2 && rules.numberOfLiveNeighbors != 3) {
+                            error("Neighbors less than 2 and more than 3 not
+                                allowed to live", null)
+                        }
+                    case DieAliveUnit::BECOME_ALIVE:
+                        if (rules.numberOfLiveNeighbors != 3) {
+                            error("Neighbors should exactly match 3 
+								to become alive", null)
+                        }
+				}
+			}
+	}
 }

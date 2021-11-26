@@ -84,22 +84,22 @@ ruleModel returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getModelAccess().getGridInitialGridParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getModelAccess().getGridsGridParserRuleCall_1_0());
 				}
-				lv_grid_1_0=ruleInitialGrid
+				lv_grids_1_0=ruleGrid
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getModelRule());
 					}
-					set(
+					add(
 						$current,
-						"grid",
-						lv_grid_1_0,
-						"game.of.life.LifeDsl.InitialGrid");
+						"grids",
+						lv_grids_1_0,
+						"game.of.life.LifeDsl.Grid");
 					afterParserOrEnumRuleCall();
 				}
 			)
-		)
+		)*
 		otherlv_2='EvolutionRules'
 		{
 			newLeafNode(otherlv_2, grammarAccess.getModelAccess().getEvolutionRulesKeyword_2());
@@ -126,15 +126,15 @@ ruleModel returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleInitialGrid
-entryRuleInitialGrid returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getInitialGridRule()); }
-	iv_ruleInitialGrid=ruleInitialGrid
-	{ $current=$iv_ruleInitialGrid.current; }
+// Entry rule entryRuleGrid
+entryRuleGrid returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getGridRule()); }
+	iv_ruleGrid=ruleGrid
+	{ $current=$iv_ruleGrid.current; }
 	EOF;
 
-// Rule InitialGrid
-ruleInitialGrid returns [EObject current=null]
+// Rule Grid
+ruleGrid returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -142,47 +142,47 @@ ruleInitialGrid returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='CellsAliveX:'
+		otherlv_0='Row:'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getInitialGridAccess().getCellsAliveXKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getGridAccess().getRowKeyword_0());
 		}
 		(
 			(
-				lv_cellsX_1_0=RULE_STRING
+				lv_row_1_0=RULE_INT
 				{
-					newLeafNode(lv_cellsX_1_0, grammarAccess.getInitialGridAccess().getCellsXSTRINGTerminalRuleCall_1_0());
+					newLeafNode(lv_row_1_0, grammarAccess.getGridAccess().getRowINTTerminalRuleCall_1_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getInitialGridRule());
+						$current = createModelElement(grammarAccess.getGridRule());
 					}
 					setWithLastConsumed(
 						$current,
-						"cellsX",
-						lv_cellsX_1_0,
-						"org.eclipse.xtext.common.Terminals.STRING");
+						"row",
+						lv_row_1_0,
+						"org.eclipse.xtext.common.Terminals.INT");
 				}
 			)
 		)
-		otherlv_2='CellsAliveY:'
+		otherlv_2='Column:'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getInitialGridAccess().getCellsAliveYKeyword_2());
+			newLeafNode(otherlv_2, grammarAccess.getGridAccess().getColumnKeyword_2());
 		}
 		(
 			(
-				lv_cellsY_3_0=RULE_STRING
+				lv_column_3_0=RULE_INT
 				{
-					newLeafNode(lv_cellsY_3_0, grammarAccess.getInitialGridAccess().getCellsYSTRINGTerminalRuleCall_3_0());
+					newLeafNode(lv_column_3_0, grammarAccess.getGridAccess().getColumnINTTerminalRuleCall_3_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getInitialGridRule());
+						$current = createModelElement(grammarAccess.getGridRule());
 					}
 					setWithLastConsumed(
 						$current,
-						"cellsY",
-						lv_cellsY_3_0,
-						"org.eclipse.xtext.common.Terminals.STRING");
+						"column",
+						lv_column_3_0,
+						"org.eclipse.xtext.common.Terminals.INT");
 				}
 			)
 		)
@@ -286,26 +286,26 @@ ruleOperator returns [Enumerator current=null]
 }:
 	(
 		(
-			enumLiteral_0='<'
+			enumLiteral_0='=='
 			{
-				$current = grammarAccess.getOperatorAccess().getLTEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_0, grammarAccess.getOperatorAccess().getLTEnumLiteralDeclaration_0());
+				$current = grammarAccess.getOperatorAccess().getEQEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_0, grammarAccess.getOperatorAccess().getEQEnumLiteralDeclaration_0());
 			}
 		)
 		    |
 		(
-			enumLiteral_1='=='
+			enumLiteral_1='<'
 			{
-				$current = grammarAccess.getOperatorAccess().getEQEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_1, grammarAccess.getOperatorAccess().getEQEnumLiteralDeclaration_1());
+				$current = grammarAccess.getOperatorAccess().getLEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_1, grammarAccess.getOperatorAccess().getLEnumLiteralDeclaration_1());
 			}
 		)
 		    |
 		(
 			enumLiteral_2='>'
 			{
-				$current = grammarAccess.getOperatorAccess().getGTEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_2, grammarAccess.getOperatorAccess().getGTEnumLiteralDeclaration_2());
+				$current = grammarAccess.getOperatorAccess().getGEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_2, grammarAccess.getOperatorAccess().getGEnumLiteralDeclaration_2());
 			}
 		)
 	)

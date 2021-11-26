@@ -60,7 +60,7 @@ public class EvolutionRulesImpl extends MinimalEObjectImpl.Container implements 
    * @generated
    * @ordered
    */
-  protected static final Operator OPERATOR_EDEFAULT = Operator.LT;
+  protected static final Operator OPERATOR_EDEFAULT = Operator.EQ;
 
   /**
    * The cached value of the '{@link #getOperator() <em>Operator</em>}' attribute.

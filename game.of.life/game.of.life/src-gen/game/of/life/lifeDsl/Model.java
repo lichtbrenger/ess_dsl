@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link game.of.life.lifeDsl.Model#getGrid <em>Grid</em>}</li>
+ *   <li>{@link game.of.life.lifeDsl.Model#getGrids <em>Grids</em>}</li>
  *   <li>{@link game.of.life.lifeDsl.Model#getRules <em>Rules</em>}</li>
  * </ul>
  *
@@ -27,26 +27,16 @@ import org.eclipse.emf.ecore.EObject;
 public interface Model extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Grid</b></em>' containment reference.
+   * Returns the value of the '<em><b>Grids</b></em>' containment reference list.
+   * The list contents are of type {@link game.of.life.lifeDsl.Grid}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Grid</em>' containment reference.
-   * @see #setGrid(InitialGrid)
-   * @see game.of.life.lifeDsl.LifeDslPackage#getModel_Grid()
+   * @return the value of the '<em>Grids</em>' containment reference list.
+   * @see game.of.life.lifeDsl.LifeDslPackage#getModel_Grids()
    * @model containment="true"
    * @generated
    */
-  InitialGrid getGrid();
-
-  /**
-   * Sets the value of the '{@link game.of.life.lifeDsl.Model#getGrid <em>Grid</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Grid</em>' containment reference.
-   * @see #getGrid()
-   * @generated
-   */
-  void setGrid(InitialGrid value);
+  EList<Grid> getGrids();
 
   /**
    * Returns the value of the '<em><b>Rules</b></em>' containment reference list.

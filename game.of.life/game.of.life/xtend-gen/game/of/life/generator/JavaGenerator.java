@@ -2,6 +2,7 @@ package game.of.life.generator;
 
 import game.of.life.lifeDsl.DieAliveUnit;
 import game.of.life.lifeDsl.EvolutionRules;
+import game.of.life.lifeDsl.Grid;
 import game.of.life.lifeDsl.Model;
 import game.of.life.lifeDsl.Operator;
 import org.eclipse.emf.common.util.EList;
@@ -93,23 +94,19 @@ public class JavaGenerator {
   
   public static CharSequence initialAlive(final Model root) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("String[] x = \"");
-    String _cellsX = root.getGrid().getCellsX();
-    _builder.append(_cellsX);
-    _builder.append("\".split(\" \");");
-    _builder.newLineIfNotEmpty();
-    _builder.append("String[] y = \"");
-    String _cellsY = root.getGrid().getCellsY();
-    _builder.append(_cellsY);
-    _builder.append("\".split(\" \");");
-    _builder.newLineIfNotEmpty();
-    _builder.append("for (int i = 0; i < x.length; i += 1) {");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("survivingCells.add(new Point(Integer.parseInt(x[i]), Integer.parseInt(y[i])));");
-    _builder.newLine();
-    _builder.append("}");
-    _builder.newLine();
+    {
+      EList<Grid> _grids = root.getGrids();
+      for(final Grid grid : _grids) {
+        _builder.append("survivingCells.add(new Point(");
+        int _row = grid.getRow();
+        _builder.append(_row);
+        _builder.append("-1, ");
+        int _column = grid.getColumn();
+        _builder.append(_column);
+        _builder.append("-1));");
+        _builder.newLineIfNotEmpty();
+      }
+    }
     _builder.newLine();
     return _builder;
   }

@@ -80,10 +80,10 @@ public class LifeDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LifeDslPackage.INITIAL_GRID:
+      case LifeDslPackage.GRID:
       {
-        InitialGrid initialGrid = (InitialGrid)theEObject;
-        T result = caseInitialGrid(initialGrid);
+        Grid grid = (Grid)theEObject;
+        T result = caseGrid(grid);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -115,17 +115,17 @@ public class LifeDslSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Initial Grid</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Grid</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Initial Grid</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Grid</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseInitialGrid(InitialGrid object)
+  public T caseGrid(Grid object)
   {
     return null;
   }

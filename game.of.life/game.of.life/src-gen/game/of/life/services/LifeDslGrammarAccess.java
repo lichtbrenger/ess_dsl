@@ -28,30 +28,30 @@ public class LifeDslGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "game.of.life.LifeDsl.Model");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cInitialGridKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cGridAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cGridInitialGridParserRuleCall_1_0 = (RuleCall)cGridAssignment_1.eContents().get(0);
+		private final Assignment cGridsAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cGridsGridParserRuleCall_1_0 = (RuleCall)cGridsAssignment_1.eContents().get(0);
 		private final Keyword cEvolutionRulesKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cRulesAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cRulesEvolutionRulesParserRuleCall_3_0 = (RuleCall)cRulesAssignment_3.eContents().get(0);
 		
 		//Model:
-		//    'InitialGrid' grid = InitialGrid
+		//    'InitialGrid' (grids += Grid)*
 		//    'EvolutionRules' (rules += EvolutionRules)*
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'InitialGrid' grid = InitialGrid
+		//'InitialGrid' (grids += Grid)*
 		//'EvolutionRules' (rules += EvolutionRules)*
 		public Group getGroup() { return cGroup; }
 		
 		//'InitialGrid'
 		public Keyword getInitialGridKeyword_0() { return cInitialGridKeyword_0; }
 		
-		//grid = InitialGrid
-		public Assignment getGridAssignment_1() { return cGridAssignment_1; }
+		//(grids += Grid)*
+		public Assignment getGridsAssignment_1() { return cGridsAssignment_1; }
 		
-		//InitialGrid
-		public RuleCall getGridInitialGridParserRuleCall_1_0() { return cGridInitialGridParserRuleCall_1_0; }
+		//Grid
+		public RuleCall getGridsGridParserRuleCall_1_0() { return cGridsGridParserRuleCall_1_0; }
 		
 		//'EvolutionRules'
 		public Keyword getEvolutionRulesKeyword_2() { return cEvolutionRulesKeyword_2; }
@@ -62,49 +62,43 @@ public class LifeDslGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//EvolutionRules
 		public RuleCall getRulesEvolutionRulesParserRuleCall_3_0() { return cRulesEvolutionRulesParserRuleCall_3_0; }
 	}
-	public class InitialGridElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "game.of.life.LifeDsl.InitialGrid");
+	public class GridElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "game.of.life.LifeDsl.Grid");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cCellsAliveXKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cCellsXAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cCellsXSTRINGTerminalRuleCall_1_0 = (RuleCall)cCellsXAssignment_1.eContents().get(0);
-		private final Keyword cCellsAliveYKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cCellsYAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cCellsYSTRINGTerminalRuleCall_3_0 = (RuleCall)cCellsYAssignment_3.eContents().get(0);
+		private final Keyword cRowKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cRowAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cRowINTTerminalRuleCall_1_0 = (RuleCall)cRowAssignment_1.eContents().get(0);
+		private final Keyword cColumnKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cColumnAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cColumnINTTerminalRuleCall_3_0 = (RuleCall)cColumnAssignment_3.eContents().get(0);
 		
-		//InitialGrid:
-		////    'Rows:' rows = INT
-		////    'Columns:' columns = INT
-		//    'CellsAliveX:' cellsX = STRING
-		//    'CellsAliveY:' cellsY = STRING
+		//Grid:
+		//    'Row:' row = INT
+		//    'Column:' column = INT
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		////    'Rows:' rows = INT
-		////    'Columns:' columns = INT
-		//    'CellsAliveX:' cellsX = STRING
-		//    'CellsAliveY:' cellsY = STRING
+		//'Row:' row = INT
+		//'Column:' column = INT
 		public Group getGroup() { return cGroup; }
 		
-		////    'Rows:' rows = INT
-		////    'Columns:' columns = INT
-		//    'CellsAliveX:'
-		public Keyword getCellsAliveXKeyword_0() { return cCellsAliveXKeyword_0; }
+		//'Row:'
+		public Keyword getRowKeyword_0() { return cRowKeyword_0; }
 		
-		//cellsX = STRING
-		public Assignment getCellsXAssignment_1() { return cCellsXAssignment_1; }
+		//row = INT
+		public Assignment getRowAssignment_1() { return cRowAssignment_1; }
 		
-		//STRING
-		public RuleCall getCellsXSTRINGTerminalRuleCall_1_0() { return cCellsXSTRINGTerminalRuleCall_1_0; }
+		//INT
+		public RuleCall getRowINTTerminalRuleCall_1_0() { return cRowINTTerminalRuleCall_1_0; }
 		
-		//'CellsAliveY:'
-		public Keyword getCellsAliveYKeyword_2() { return cCellsAliveYKeyword_2; }
+		//'Column:'
+		public Keyword getColumnKeyword_2() { return cColumnKeyword_2; }
 		
-		//cellsY = STRING
-		public Assignment getCellsYAssignment_3() { return cCellsYAssignment_3; }
+		//column = INT
+		public Assignment getColumnAssignment_3() { return cColumnAssignment_3; }
 		
-		//STRING
-		public RuleCall getCellsYSTRINGTerminalRuleCall_3_0() { return cCellsYSTRINGTerminalRuleCall_3_0; }
+		//INT
+		public RuleCall getColumnINTTerminalRuleCall_3_0() { return cColumnINTTerminalRuleCall_3_0; }
 	}
 	public class EvolutionRulesElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "game.of.life.LifeDsl.EvolutionRules");
@@ -162,42 +156,42 @@ public class LifeDslGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	public class OperatorElements extends AbstractElementFinder.AbstractEnumRuleElementFinder {
 		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "game.of.life.LifeDsl.Operator");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final EnumLiteralDeclaration cLTEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
-		private final Keyword cLTLessThanSignKeyword_0_0 = (Keyword)cLTEnumLiteralDeclaration_0.eContents().get(0);
-		private final EnumLiteralDeclaration cEQEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
-		private final Keyword cEQEqualsSignEqualsSignKeyword_1_0 = (Keyword)cEQEnumLiteralDeclaration_1.eContents().get(0);
-		private final EnumLiteralDeclaration cGTEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
-		private final Keyword cGTGreaterThanSignKeyword_2_0 = (Keyword)cGTEnumLiteralDeclaration_2.eContents().get(0);
+		private final EnumLiteralDeclaration cEQEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cEQEqualsSignEqualsSignKeyword_0_0 = (Keyword)cEQEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cLEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cLLessThanSignKeyword_1_0 = (Keyword)cLEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cGEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cGGreaterThanSignKeyword_2_0 = (Keyword)cGEnumLiteralDeclaration_2.eContents().get(0);
 		
 		//enum Operator:
-		//    LT = '<' |
 		//    EQ = '==' |
-		//    GT = '>'
+		//    L = '<' |
+		//    G = '>'
 		//;
 		public EnumRule getRule() { return rule; }
 		
-		//LT = '<' |
 		//EQ = '==' |
-		//GT = '>'
+		//L = '<' |
+		//G = '>'
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//LT = '<'
-		public EnumLiteralDeclaration getLTEnumLiteralDeclaration_0() { return cLTEnumLiteralDeclaration_0; }
-		
-		//'<'
-		public Keyword getLTLessThanSignKeyword_0_0() { return cLTLessThanSignKeyword_0_0; }
-		
 		//EQ = '=='
-		public EnumLiteralDeclaration getEQEnumLiteralDeclaration_1() { return cEQEnumLiteralDeclaration_1; }
+		public EnumLiteralDeclaration getEQEnumLiteralDeclaration_0() { return cEQEnumLiteralDeclaration_0; }
 		
 		//'=='
-		public Keyword getEQEqualsSignEqualsSignKeyword_1_0() { return cEQEqualsSignEqualsSignKeyword_1_0; }
+		public Keyword getEQEqualsSignEqualsSignKeyword_0_0() { return cEQEqualsSignEqualsSignKeyword_0_0; }
 		
-		//GT = '>'
-		public EnumLiteralDeclaration getGTEnumLiteralDeclaration_2() { return cGTEnumLiteralDeclaration_2; }
+		//L = '<'
+		public EnumLiteralDeclaration getLEnumLiteralDeclaration_1() { return cLEnumLiteralDeclaration_1; }
+		
+		//'<'
+		public Keyword getLLessThanSignKeyword_1_0() { return cLLessThanSignKeyword_1_0; }
+		
+		//G = '>'
+		public EnumLiteralDeclaration getGEnumLiteralDeclaration_2() { return cGEnumLiteralDeclaration_2; }
 		
 		//'>'
-		public Keyword getGTGreaterThanSignKeyword_2_0() { return cGTGreaterThanSignKeyword_2_0; }
+		public Keyword getGGreaterThanSignKeyword_2_0() { return cGGreaterThanSignKeyword_2_0; }
 	}
 	public class DieAliveUnitElements extends AbstractElementFinder.AbstractEnumRuleElementFinder {
 		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "game.of.life.LifeDsl.DieAliveUnit");
@@ -241,7 +235,7 @@ public class LifeDslGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	private final ModelElements pModel;
-	private final InitialGridElements pInitialGrid;
+	private final GridElements pGrid;
 	private final EvolutionRulesElements pEvolutionRules;
 	private final OperatorElements eOperator;
 	private final DieAliveUnitElements eDieAliveUnit;
@@ -256,7 +250,7 @@ public class LifeDslGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		this.grammar = internalFindGrammar(grammarProvider);
 		this.gaTerminals = gaTerminals;
 		this.pModel = new ModelElements();
-		this.pInitialGrid = new InitialGridElements();
+		this.pGrid = new GridElements();
 		this.pEvolutionRules = new EvolutionRulesElements();
 		this.eOperator = new OperatorElements();
 		this.eDieAliveUnit = new DieAliveUnitElements();
@@ -290,7 +284,7 @@ public class LifeDslGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 
 	
 	//Model:
-	//    'InitialGrid' grid = InitialGrid
+	//    'InitialGrid' (grids += Grid)*
 	//    'EvolutionRules' (rules += EvolutionRules)*
 	//;
 	public ModelElements getModelAccess() {
@@ -301,18 +295,16 @@ public class LifeDslGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		return getModelAccess().getRule();
 	}
 	
-	//InitialGrid:
-	////    'Rows:' rows = INT
-	////    'Columns:' columns = INT
-	//    'CellsAliveX:' cellsX = STRING
-	//    'CellsAliveY:' cellsY = STRING
+	//Grid:
+	//    'Row:' row = INT
+	//    'Column:' column = INT
 	//;
-	public InitialGridElements getInitialGridAccess() {
-		return pInitialGrid;
+	public GridElements getGridAccess() {
+		return pGrid;
 	}
 	
-	public ParserRule getInitialGridRule() {
-		return getInitialGridAccess().getRule();
+	public ParserRule getGridRule() {
+		return getGridAccess().getRule();
 	}
 	
 	//EvolutionRules:
@@ -329,9 +321,9 @@ public class LifeDslGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//enum Operator:
-	//    LT = '<' |
 	//    EQ = '==' |
-	//    GT = '>'
+	//    L = '<' |
+	//    G = '>'
 	//;
 	public OperatorElements getOperatorAccess() {
 		return eOperator;

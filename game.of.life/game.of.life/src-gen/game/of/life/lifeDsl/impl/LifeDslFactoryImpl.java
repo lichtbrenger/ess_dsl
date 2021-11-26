@@ -67,7 +67,7 @@ public class LifeDslFactoryImpl extends EFactoryImpl implements LifeDslFactory
     switch (eClass.getClassifierID())
     {
       case LifeDslPackage.MODEL: return createModel();
-      case LifeDslPackage.INITIAL_GRID: return createInitialGrid();
+      case LifeDslPackage.GRID: return createGrid();
       case LifeDslPackage.EVOLUTION_RULES: return createEvolutionRules();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -130,10 +130,10 @@ public class LifeDslFactoryImpl extends EFactoryImpl implements LifeDslFactory
    * @generated
    */
   @Override
-  public InitialGrid createInitialGrid()
+  public Grid createGrid()
   {
-    InitialGridImpl initialGrid = new InitialGridImpl();
-    return initialGrid;
+    GridImpl grid = new GridImpl();
+    return grid;
   }
 
   /**

@@ -22,9 +22,9 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalLifeDslParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_INT", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'InitialGrid'", "'EvolutionRules'", "'CellsAliveX:'", "'CellsAliveY:'", "'Rule:'", "'ComparisonOperator:'", "'NumberOfLiveNeighbors:'", "'<'", "'=='", "'>'", "'die'", "'live'", "'become alive'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_ID", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'InitialGrid'", "'EvolutionRules'", "'Row:'", "'Column:'", "'Rule:'", "'ComparisonOperator:'", "'NumberOfLiveNeighbors:'", "'=='", "'<'", "'>'", "'die'", "'live'", "'become alive'"
     };
-    public static final int RULE_STRING=4;
+    public static final int RULE_STRING=6;
     public static final int RULE_SL_COMMENT=8;
     public static final int T__19=19;
     public static final int T__15=15;
@@ -36,10 +36,10 @@ public class InternalLifeDslParser extends AbstractInternalAntlrParser {
     public static final int T__13=13;
     public static final int T__14=14;
     public static final int EOF=-1;
-    public static final int RULE_ID=6;
+    public static final int RULE_ID=5;
     public static final int RULE_WS=9;
     public static final int RULE_ANY_OTHER=10;
-    public static final int RULE_INT=5;
+    public static final int RULE_INT=4;
     public static final int T__22=22;
     public static final int RULE_ML_COMMENT=7;
     public static final int T__23=23;
@@ -122,13 +122,13 @@ public class InternalLifeDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleModel"
-    // InternalLifeDsl.g:72:1: ruleModel returns [EObject current=null] : (otherlv_0= 'InitialGrid' ( (lv_grid_1_0= ruleInitialGrid ) ) otherlv_2= 'EvolutionRules' ( (lv_rules_3_0= ruleEvolutionRules ) )* ) ;
+    // InternalLifeDsl.g:72:1: ruleModel returns [EObject current=null] : (otherlv_0= 'InitialGrid' ( (lv_grids_1_0= ruleGrid ) )* otherlv_2= 'EvolutionRules' ( (lv_rules_3_0= ruleEvolutionRules ) )* ) ;
     public final EObject ruleModel() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token otherlv_2=null;
-        EObject lv_grid_1_0 = null;
+        EObject lv_grids_1_0 = null;
 
         EObject lv_rules_3_0 = null;
 
@@ -137,63 +137,81 @@ public class InternalLifeDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLifeDsl.g:78:2: ( (otherlv_0= 'InitialGrid' ( (lv_grid_1_0= ruleInitialGrid ) ) otherlv_2= 'EvolutionRules' ( (lv_rules_3_0= ruleEvolutionRules ) )* ) )
-            // InternalLifeDsl.g:79:2: (otherlv_0= 'InitialGrid' ( (lv_grid_1_0= ruleInitialGrid ) ) otherlv_2= 'EvolutionRules' ( (lv_rules_3_0= ruleEvolutionRules ) )* )
+            // InternalLifeDsl.g:78:2: ( (otherlv_0= 'InitialGrid' ( (lv_grids_1_0= ruleGrid ) )* otherlv_2= 'EvolutionRules' ( (lv_rules_3_0= ruleEvolutionRules ) )* ) )
+            // InternalLifeDsl.g:79:2: (otherlv_0= 'InitialGrid' ( (lv_grids_1_0= ruleGrid ) )* otherlv_2= 'EvolutionRules' ( (lv_rules_3_0= ruleEvolutionRules ) )* )
             {
-            // InternalLifeDsl.g:79:2: (otherlv_0= 'InitialGrid' ( (lv_grid_1_0= ruleInitialGrid ) ) otherlv_2= 'EvolutionRules' ( (lv_rules_3_0= ruleEvolutionRules ) )* )
-            // InternalLifeDsl.g:80:3: otherlv_0= 'InitialGrid' ( (lv_grid_1_0= ruleInitialGrid ) ) otherlv_2= 'EvolutionRules' ( (lv_rules_3_0= ruleEvolutionRules ) )*
+            // InternalLifeDsl.g:79:2: (otherlv_0= 'InitialGrid' ( (lv_grids_1_0= ruleGrid ) )* otherlv_2= 'EvolutionRules' ( (lv_rules_3_0= ruleEvolutionRules ) )* )
+            // InternalLifeDsl.g:80:3: otherlv_0= 'InitialGrid' ( (lv_grids_1_0= ruleGrid ) )* otherlv_2= 'EvolutionRules' ( (lv_rules_3_0= ruleEvolutionRules ) )*
             {
             otherlv_0=(Token)match(input,11,FOLLOW_3); 
 
             			newLeafNode(otherlv_0, grammarAccess.getModelAccess().getInitialGridKeyword_0());
             		
-            // InternalLifeDsl.g:84:3: ( (lv_grid_1_0= ruleInitialGrid ) )
-            // InternalLifeDsl.g:85:4: (lv_grid_1_0= ruleInitialGrid )
-            {
-            // InternalLifeDsl.g:85:4: (lv_grid_1_0= ruleInitialGrid )
-            // InternalLifeDsl.g:86:5: lv_grid_1_0= ruleInitialGrid
-            {
-
-            					newCompositeNode(grammarAccess.getModelAccess().getGridInitialGridParserRuleCall_1_0());
-            				
-            pushFollow(FOLLOW_4);
-            lv_grid_1_0=ruleInitialGrid();
-
-            state._fsp--;
-
-
-            					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getModelRule());
-            					}
-            					set(
-            						current,
-            						"grid",
-            						lv_grid_1_0,
-            						"game.of.life.LifeDsl.InitialGrid");
-            					afterParserOrEnumRuleCall();
-            				
-
-            }
-
-
-            }
-
-            otherlv_2=(Token)match(input,12,FOLLOW_5); 
-
-            			newLeafNode(otherlv_2, grammarAccess.getModelAccess().getEvolutionRulesKeyword_2());
-            		
-            // InternalLifeDsl.g:107:3: ( (lv_rules_3_0= ruleEvolutionRules ) )*
+            // InternalLifeDsl.g:84:3: ( (lv_grids_1_0= ruleGrid ) )*
             loop1:
             do {
                 int alt1=2;
                 int LA1_0 = input.LA(1);
 
-                if ( (LA1_0==15) ) {
+                if ( (LA1_0==13) ) {
                     alt1=1;
                 }
 
 
                 switch (alt1) {
+            	case 1 :
+            	    // InternalLifeDsl.g:85:4: (lv_grids_1_0= ruleGrid )
+            	    {
+            	    // InternalLifeDsl.g:85:4: (lv_grids_1_0= ruleGrid )
+            	    // InternalLifeDsl.g:86:5: lv_grids_1_0= ruleGrid
+            	    {
+
+            	    					newCompositeNode(grammarAccess.getModelAccess().getGridsGridParserRuleCall_1_0());
+            	    				
+            	    pushFollow(FOLLOW_3);
+            	    lv_grids_1_0=ruleGrid();
+
+            	    state._fsp--;
+
+
+            	    					if (current==null) {
+            	    						current = createModelElementForParent(grammarAccess.getModelRule());
+            	    					}
+            	    					add(
+            	    						current,
+            	    						"grids",
+            	    						lv_grids_1_0,
+            	    						"game.of.life.LifeDsl.Grid");
+            	    					afterParserOrEnumRuleCall();
+            	    				
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop1;
+                }
+            } while (true);
+
+            otherlv_2=(Token)match(input,12,FOLLOW_4); 
+
+            			newLeafNode(otherlv_2, grammarAccess.getModelAccess().getEvolutionRulesKeyword_2());
+            		
+            // InternalLifeDsl.g:107:3: ( (lv_rules_3_0= ruleEvolutionRules ) )*
+            loop2:
+            do {
+                int alt2=2;
+                int LA2_0 = input.LA(1);
+
+                if ( (LA2_0==15) ) {
+                    alt2=1;
+                }
+
+
+                switch (alt2) {
             	case 1 :
             	    // InternalLifeDsl.g:108:4: (lv_rules_3_0= ruleEvolutionRules )
             	    {
@@ -203,7 +221,7 @@ public class InternalLifeDslParser extends AbstractInternalAntlrParser {
 
             	    					newCompositeNode(grammarAccess.getModelAccess().getRulesEvolutionRulesParserRuleCall_3_0());
             	    				
-            	    pushFollow(FOLLOW_5);
+            	    pushFollow(FOLLOW_4);
             	    lv_rules_3_0=ruleEvolutionRules();
 
             	    state._fsp--;
@@ -227,7 +245,7 @@ public class InternalLifeDslParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop1;
+            	    break loop2;
                 }
             } while (true);
 
@@ -253,25 +271,25 @@ public class InternalLifeDslParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleModel"
 
 
-    // $ANTLR start "entryRuleInitialGrid"
-    // InternalLifeDsl.g:130:1: entryRuleInitialGrid returns [EObject current=null] : iv_ruleInitialGrid= ruleInitialGrid EOF ;
-    public final EObject entryRuleInitialGrid() throws RecognitionException {
+    // $ANTLR start "entryRuleGrid"
+    // InternalLifeDsl.g:130:1: entryRuleGrid returns [EObject current=null] : iv_ruleGrid= ruleGrid EOF ;
+    public final EObject entryRuleGrid() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleInitialGrid = null;
+        EObject iv_ruleGrid = null;
 
 
         try {
-            // InternalLifeDsl.g:130:52: (iv_ruleInitialGrid= ruleInitialGrid EOF )
-            // InternalLifeDsl.g:131:2: iv_ruleInitialGrid= ruleInitialGrid EOF
+            // InternalLifeDsl.g:130:45: (iv_ruleGrid= ruleGrid EOF )
+            // InternalLifeDsl.g:131:2: iv_ruleGrid= ruleGrid EOF
             {
-             newCompositeNode(grammarAccess.getInitialGridRule()); 
+             newCompositeNode(grammarAccess.getGridRule()); 
             pushFollow(FOLLOW_1);
-            iv_ruleInitialGrid=ruleInitialGrid();
+            iv_ruleGrid=ruleGrid();
 
             state._fsp--;
 
-             current =iv_ruleInitialGrid; 
+             current =iv_ruleGrid; 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -286,52 +304,52 @@ public class InternalLifeDslParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleInitialGrid"
+    // $ANTLR end "entryRuleGrid"
 
 
-    // $ANTLR start "ruleInitialGrid"
-    // InternalLifeDsl.g:137:1: ruleInitialGrid returns [EObject current=null] : (otherlv_0= 'CellsAliveX:' ( (lv_cellsX_1_0= RULE_STRING ) ) otherlv_2= 'CellsAliveY:' ( (lv_cellsY_3_0= RULE_STRING ) ) ) ;
-    public final EObject ruleInitialGrid() throws RecognitionException {
+    // $ANTLR start "ruleGrid"
+    // InternalLifeDsl.g:137:1: ruleGrid returns [EObject current=null] : (otherlv_0= 'Row:' ( (lv_row_1_0= RULE_INT ) ) otherlv_2= 'Column:' ( (lv_column_3_0= RULE_INT ) ) ) ;
+    public final EObject ruleGrid() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token lv_cellsX_1_0=null;
+        Token lv_row_1_0=null;
         Token otherlv_2=null;
-        Token lv_cellsY_3_0=null;
+        Token lv_column_3_0=null;
 
 
         	enterRule();
 
         try {
-            // InternalLifeDsl.g:143:2: ( (otherlv_0= 'CellsAliveX:' ( (lv_cellsX_1_0= RULE_STRING ) ) otherlv_2= 'CellsAliveY:' ( (lv_cellsY_3_0= RULE_STRING ) ) ) )
-            // InternalLifeDsl.g:144:2: (otherlv_0= 'CellsAliveX:' ( (lv_cellsX_1_0= RULE_STRING ) ) otherlv_2= 'CellsAliveY:' ( (lv_cellsY_3_0= RULE_STRING ) ) )
+            // InternalLifeDsl.g:143:2: ( (otherlv_0= 'Row:' ( (lv_row_1_0= RULE_INT ) ) otherlv_2= 'Column:' ( (lv_column_3_0= RULE_INT ) ) ) )
+            // InternalLifeDsl.g:144:2: (otherlv_0= 'Row:' ( (lv_row_1_0= RULE_INT ) ) otherlv_2= 'Column:' ( (lv_column_3_0= RULE_INT ) ) )
             {
-            // InternalLifeDsl.g:144:2: (otherlv_0= 'CellsAliveX:' ( (lv_cellsX_1_0= RULE_STRING ) ) otherlv_2= 'CellsAliveY:' ( (lv_cellsY_3_0= RULE_STRING ) ) )
-            // InternalLifeDsl.g:145:3: otherlv_0= 'CellsAliveX:' ( (lv_cellsX_1_0= RULE_STRING ) ) otherlv_2= 'CellsAliveY:' ( (lv_cellsY_3_0= RULE_STRING ) )
+            // InternalLifeDsl.g:144:2: (otherlv_0= 'Row:' ( (lv_row_1_0= RULE_INT ) ) otherlv_2= 'Column:' ( (lv_column_3_0= RULE_INT ) ) )
+            // InternalLifeDsl.g:145:3: otherlv_0= 'Row:' ( (lv_row_1_0= RULE_INT ) ) otherlv_2= 'Column:' ( (lv_column_3_0= RULE_INT ) )
             {
-            otherlv_0=(Token)match(input,13,FOLLOW_6); 
+            otherlv_0=(Token)match(input,13,FOLLOW_5); 
 
-            			newLeafNode(otherlv_0, grammarAccess.getInitialGridAccess().getCellsAliveXKeyword_0());
+            			newLeafNode(otherlv_0, grammarAccess.getGridAccess().getRowKeyword_0());
             		
-            // InternalLifeDsl.g:149:3: ( (lv_cellsX_1_0= RULE_STRING ) )
-            // InternalLifeDsl.g:150:4: (lv_cellsX_1_0= RULE_STRING )
+            // InternalLifeDsl.g:149:3: ( (lv_row_1_0= RULE_INT ) )
+            // InternalLifeDsl.g:150:4: (lv_row_1_0= RULE_INT )
             {
-            // InternalLifeDsl.g:150:4: (lv_cellsX_1_0= RULE_STRING )
-            // InternalLifeDsl.g:151:5: lv_cellsX_1_0= RULE_STRING
+            // InternalLifeDsl.g:150:4: (lv_row_1_0= RULE_INT )
+            // InternalLifeDsl.g:151:5: lv_row_1_0= RULE_INT
             {
-            lv_cellsX_1_0=(Token)match(input,RULE_STRING,FOLLOW_7); 
+            lv_row_1_0=(Token)match(input,RULE_INT,FOLLOW_6); 
 
-            					newLeafNode(lv_cellsX_1_0, grammarAccess.getInitialGridAccess().getCellsXSTRINGTerminalRuleCall_1_0());
+            					newLeafNode(lv_row_1_0, grammarAccess.getGridAccess().getRowINTTerminalRuleCall_1_0());
             				
 
             					if (current==null) {
-            						current = createModelElement(grammarAccess.getInitialGridRule());
+            						current = createModelElement(grammarAccess.getGridRule());
             					}
             					setWithLastConsumed(
             						current,
-            						"cellsX",
-            						lv_cellsX_1_0,
-            						"org.eclipse.xtext.common.Terminals.STRING");
+            						"row",
+            						lv_row_1_0,
+            						"org.eclipse.xtext.common.Terminals.INT");
             				
 
             }
@@ -339,29 +357,29 @@ public class InternalLifeDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,14,FOLLOW_6); 
+            otherlv_2=(Token)match(input,14,FOLLOW_5); 
 
-            			newLeafNode(otherlv_2, grammarAccess.getInitialGridAccess().getCellsAliveYKeyword_2());
+            			newLeafNode(otherlv_2, grammarAccess.getGridAccess().getColumnKeyword_2());
             		
-            // InternalLifeDsl.g:171:3: ( (lv_cellsY_3_0= RULE_STRING ) )
-            // InternalLifeDsl.g:172:4: (lv_cellsY_3_0= RULE_STRING )
+            // InternalLifeDsl.g:171:3: ( (lv_column_3_0= RULE_INT ) )
+            // InternalLifeDsl.g:172:4: (lv_column_3_0= RULE_INT )
             {
-            // InternalLifeDsl.g:172:4: (lv_cellsY_3_0= RULE_STRING )
-            // InternalLifeDsl.g:173:5: lv_cellsY_3_0= RULE_STRING
+            // InternalLifeDsl.g:172:4: (lv_column_3_0= RULE_INT )
+            // InternalLifeDsl.g:173:5: lv_column_3_0= RULE_INT
             {
-            lv_cellsY_3_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
+            lv_column_3_0=(Token)match(input,RULE_INT,FOLLOW_2); 
 
-            					newLeafNode(lv_cellsY_3_0, grammarAccess.getInitialGridAccess().getCellsYSTRINGTerminalRuleCall_3_0());
+            					newLeafNode(lv_column_3_0, grammarAccess.getGridAccess().getColumnINTTerminalRuleCall_3_0());
             				
 
             					if (current==null) {
-            						current = createModelElement(grammarAccess.getInitialGridRule());
+            						current = createModelElement(grammarAccess.getGridRule());
             					}
             					setWithLastConsumed(
             						current,
-            						"cellsY",
-            						lv_cellsY_3_0,
-            						"org.eclipse.xtext.common.Terminals.STRING");
+            						"column",
+            						lv_column_3_0,
+            						"org.eclipse.xtext.common.Terminals.INT");
             				
 
             }
@@ -388,7 +406,7 @@ public class InternalLifeDslParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleInitialGrid"
+    // $ANTLR end "ruleGrid"
 
 
     // $ANTLR start "entryRuleEvolutionRules"
@@ -451,7 +469,7 @@ public class InternalLifeDslParser extends AbstractInternalAntlrParser {
             // InternalLifeDsl.g:207:2: (otherlv_0= 'Rule:' ( (lv_name_1_0= ruleDieAliveUnit ) ) otherlv_2= 'ComparisonOperator:' ( (lv_operator_3_0= ruleOperator ) ) otherlv_4= 'NumberOfLiveNeighbors:' ( (lv_numberOfLiveNeighbors_5_0= RULE_INT ) ) )
             // InternalLifeDsl.g:208:3: otherlv_0= 'Rule:' ( (lv_name_1_0= ruleDieAliveUnit ) ) otherlv_2= 'ComparisonOperator:' ( (lv_operator_3_0= ruleOperator ) ) otherlv_4= 'NumberOfLiveNeighbors:' ( (lv_numberOfLiveNeighbors_5_0= RULE_INT ) )
             {
-            otherlv_0=(Token)match(input,15,FOLLOW_8); 
+            otherlv_0=(Token)match(input,15,FOLLOW_7); 
 
             			newLeafNode(otherlv_0, grammarAccess.getEvolutionRulesAccess().getRuleKeyword_0());
             		
@@ -464,7 +482,7 @@ public class InternalLifeDslParser extends AbstractInternalAntlrParser {
 
             					newCompositeNode(grammarAccess.getEvolutionRulesAccess().getNameDieAliveUnitEnumRuleCall_1_0());
             				
-            pushFollow(FOLLOW_9);
+            pushFollow(FOLLOW_8);
             lv_name_1_0=ruleDieAliveUnit();
 
             state._fsp--;
@@ -486,7 +504,7 @@ public class InternalLifeDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,16,FOLLOW_10); 
+            otherlv_2=(Token)match(input,16,FOLLOW_9); 
 
             			newLeafNode(otherlv_2, grammarAccess.getEvolutionRulesAccess().getComparisonOperatorKeyword_2());
             		
@@ -499,7 +517,7 @@ public class InternalLifeDslParser extends AbstractInternalAntlrParser {
 
             					newCompositeNode(grammarAccess.getEvolutionRulesAccess().getOperatorOperatorEnumRuleCall_3_0());
             				
-            pushFollow(FOLLOW_11);
+            pushFollow(FOLLOW_10);
             lv_operator_3_0=ruleOperator();
 
             state._fsp--;
@@ -521,7 +539,7 @@ public class InternalLifeDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,17,FOLLOW_12); 
+            otherlv_4=(Token)match(input,17,FOLLOW_5); 
 
             			newLeafNode(otherlv_4, grammarAccess.getEvolutionRulesAccess().getNumberOfLiveNeighborsKeyword_4());
             		
@@ -574,7 +592,7 @@ public class InternalLifeDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleOperator"
-    // InternalLifeDsl.g:280:1: ruleOperator returns [Enumerator current=null] : ( (enumLiteral_0= '<' ) | (enumLiteral_1= '==' ) | (enumLiteral_2= '>' ) ) ;
+    // InternalLifeDsl.g:280:1: ruleOperator returns [Enumerator current=null] : ( (enumLiteral_0= '==' ) | (enumLiteral_1= '<' ) | (enumLiteral_2= '>' ) ) ;
     public final Enumerator ruleOperator() throws RecognitionException {
         Enumerator current = null;
 
@@ -586,45 +604,45 @@ public class InternalLifeDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLifeDsl.g:286:2: ( ( (enumLiteral_0= '<' ) | (enumLiteral_1= '==' ) | (enumLiteral_2= '>' ) ) )
-            // InternalLifeDsl.g:287:2: ( (enumLiteral_0= '<' ) | (enumLiteral_1= '==' ) | (enumLiteral_2= '>' ) )
+            // InternalLifeDsl.g:286:2: ( ( (enumLiteral_0= '==' ) | (enumLiteral_1= '<' ) | (enumLiteral_2= '>' ) ) )
+            // InternalLifeDsl.g:287:2: ( (enumLiteral_0= '==' ) | (enumLiteral_1= '<' ) | (enumLiteral_2= '>' ) )
             {
-            // InternalLifeDsl.g:287:2: ( (enumLiteral_0= '<' ) | (enumLiteral_1= '==' ) | (enumLiteral_2= '>' ) )
-            int alt2=3;
+            // InternalLifeDsl.g:287:2: ( (enumLiteral_0= '==' ) | (enumLiteral_1= '<' ) | (enumLiteral_2= '>' ) )
+            int alt3=3;
             switch ( input.LA(1) ) {
             case 18:
                 {
-                alt2=1;
+                alt3=1;
                 }
                 break;
             case 19:
                 {
-                alt2=2;
+                alt3=2;
                 }
                 break;
             case 20:
                 {
-                alt2=3;
+                alt3=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 2, 0, input);
+                    new NoViableAltException("", 3, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt2) {
+            switch (alt3) {
                 case 1 :
-                    // InternalLifeDsl.g:288:3: (enumLiteral_0= '<' )
+                    // InternalLifeDsl.g:288:3: (enumLiteral_0= '==' )
                     {
-                    // InternalLifeDsl.g:288:3: (enumLiteral_0= '<' )
-                    // InternalLifeDsl.g:289:4: enumLiteral_0= '<'
+                    // InternalLifeDsl.g:288:3: (enumLiteral_0= '==' )
+                    // InternalLifeDsl.g:289:4: enumLiteral_0= '=='
                     {
                     enumLiteral_0=(Token)match(input,18,FOLLOW_2); 
 
-                    				current = grammarAccess.getOperatorAccess().getLTEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
-                    				newLeafNode(enumLiteral_0, grammarAccess.getOperatorAccess().getLTEnumLiteralDeclaration_0());
+                    				current = grammarAccess.getOperatorAccess().getEQEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_0, grammarAccess.getOperatorAccess().getEQEnumLiteralDeclaration_0());
                     			
 
                     }
@@ -633,15 +651,15 @@ public class InternalLifeDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalLifeDsl.g:296:3: (enumLiteral_1= '==' )
+                    // InternalLifeDsl.g:296:3: (enumLiteral_1= '<' )
                     {
-                    // InternalLifeDsl.g:296:3: (enumLiteral_1= '==' )
-                    // InternalLifeDsl.g:297:4: enumLiteral_1= '=='
+                    // InternalLifeDsl.g:296:3: (enumLiteral_1= '<' )
+                    // InternalLifeDsl.g:297:4: enumLiteral_1= '<'
                     {
                     enumLiteral_1=(Token)match(input,19,FOLLOW_2); 
 
-                    				current = grammarAccess.getOperatorAccess().getEQEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-                    				newLeafNode(enumLiteral_1, grammarAccess.getOperatorAccess().getEQEnumLiteralDeclaration_1());
+                    				current = grammarAccess.getOperatorAccess().getLEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_1, grammarAccess.getOperatorAccess().getLEnumLiteralDeclaration_1());
                     			
 
                     }
@@ -657,8 +675,8 @@ public class InternalLifeDslParser extends AbstractInternalAntlrParser {
                     {
                     enumLiteral_2=(Token)match(input,20,FOLLOW_2); 
 
-                    				current = grammarAccess.getOperatorAccess().getGTEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
-                    				newLeafNode(enumLiteral_2, grammarAccess.getOperatorAccess().getGTEnumLiteralDeclaration_2());
+                    				current = grammarAccess.getOperatorAccess().getGEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_2, grammarAccess.getOperatorAccess().getGEnumLiteralDeclaration_2());
                     			
 
                     }
@@ -705,31 +723,31 @@ public class InternalLifeDslParser extends AbstractInternalAntlrParser {
             // InternalLifeDsl.g:322:2: ( (enumLiteral_0= 'die' ) | (enumLiteral_1= 'live' ) | (enumLiteral_2= 'become alive' ) )
             {
             // InternalLifeDsl.g:322:2: ( (enumLiteral_0= 'die' ) | (enumLiteral_1= 'live' ) | (enumLiteral_2= 'become alive' ) )
-            int alt3=3;
+            int alt4=3;
             switch ( input.LA(1) ) {
             case 21:
                 {
-                alt3=1;
+                alt4=1;
                 }
                 break;
             case 22:
                 {
-                alt3=2;
+                alt4=2;
                 }
                 break;
             case 23:
                 {
-                alt3=3;
+                alt4=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 3, 0, input);
+                    new NoViableAltException("", 4, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt3) {
+            switch (alt4) {
                 case 1 :
                     // InternalLifeDsl.g:323:3: (enumLiteral_0= 'die' )
                     {
@@ -809,15 +827,13 @@ public class InternalLifeDslParser extends AbstractInternalAntlrParser {
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000008002L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000E00000L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x00000000001C0000L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000003000L});
+    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000008002L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000E00000L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x00000000001C0000L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000020000L});
 
 }

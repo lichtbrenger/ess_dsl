@@ -21,16 +21,6 @@ import org.eclipse.emf.common.util.Enumerator;
 public enum Operator implements Enumerator
 {
   /**
-   * The '<em><b>LT</b></em>' literal object.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #LT_VALUE
-   * @generated
-   * @ordered
-   */
-  LT(0, "LT", "<"),
-
-  /**
    * The '<em><b>EQ</b></em>' literal object.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -38,28 +28,27 @@ public enum Operator implements Enumerator
    * @generated
    * @ordered
    */
-  EQ(1, "EQ", "=="),
+  EQ(0, "EQ", "=="),
 
   /**
-   * The '<em><b>GT</b></em>' literal object.
+   * The '<em><b>L</b></em>' literal object.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #GT_VALUE
+   * @see #L_VALUE
    * @generated
    * @ordered
    */
-  GT(2, "GT", ">");
+  L(1, "L", "<"),
 
   /**
-   * The '<em><b>LT</b></em>' literal value.
+   * The '<em><b>G</b></em>' literal object.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #LT
-   * @model literal="&lt;"
+   * @see #G_VALUE
    * @generated
    * @ordered
    */
-  public static final int LT_VALUE = 0;
+  G(2, "G", ">");
 
   /**
    * The '<em><b>EQ</b></em>' literal value.
@@ -70,18 +59,29 @@ public enum Operator implements Enumerator
    * @generated
    * @ordered
    */
-  public static final int EQ_VALUE = 1;
+  public static final int EQ_VALUE = 0;
 
   /**
-   * The '<em><b>GT</b></em>' literal value.
+   * The '<em><b>L</b></em>' literal value.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #GT
+   * @see #L
+   * @model literal="&lt;"
+   * @generated
+   * @ordered
+   */
+  public static final int L_VALUE = 1;
+
+  /**
+   * The '<em><b>G</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #G
    * @model literal="&gt;"
    * @generated
    * @ordered
    */
-  public static final int GT_VALUE = 2;
+  public static final int G_VALUE = 2;
 
   /**
    * An array of all the '<em><b>Operator</b></em>' enumerators.
@@ -92,9 +92,9 @@ public enum Operator implements Enumerator
   private static final Operator[] VALUES_ARRAY =
     new Operator[]
     {
-      LT,
       EQ,
-      GT,
+      L,
+      G,
     };
 
   /**
@@ -159,9 +159,9 @@ public enum Operator implements Enumerator
   {
     switch (value)
     {
-      case LT_VALUE: return LT;
       case EQ_VALUE: return EQ;
-      case GT_VALUE: return GT;
+      case L_VALUE: return L;
+      case G_VALUE: return G;
     }
     return null;
   }

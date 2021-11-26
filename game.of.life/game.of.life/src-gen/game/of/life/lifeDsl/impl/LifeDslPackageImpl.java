@@ -5,7 +5,7 @@ package game.of.life.lifeDsl.impl;
 
 import game.of.life.lifeDsl.DieAliveUnit;
 import game.of.life.lifeDsl.EvolutionRules;
-import game.of.life.lifeDsl.InitialGrid;
+import game.of.life.lifeDsl.Grid;
 import game.of.life.lifeDsl.LifeDslFactory;
 import game.of.life.lifeDsl.LifeDslPackage;
 import game.of.life.lifeDsl.Model;
@@ -39,7 +39,7 @@ public class LifeDslPackageImpl extends EPackageImpl implements LifeDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass initialGridEClass = null;
+  private EClass gridEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -142,7 +142,7 @@ public class LifeDslPackageImpl extends EPackageImpl implements LifeDslPackage
    * @generated
    */
   @Override
-  public EReference getModel_Grid()
+  public EReference getModel_Grids()
   {
     return (EReference)modelEClass.getEStructuralFeatures().get(0);
   }
@@ -164,9 +164,9 @@ public class LifeDslPackageImpl extends EPackageImpl implements LifeDslPackage
    * @generated
    */
   @Override
-  public EClass getInitialGrid()
+  public EClass getGrid()
   {
-    return initialGridEClass;
+    return gridEClass;
   }
 
   /**
@@ -175,9 +175,9 @@ public class LifeDslPackageImpl extends EPackageImpl implements LifeDslPackage
    * @generated
    */
   @Override
-  public EAttribute getInitialGrid_CellsX()
+  public EAttribute getGrid_Row()
   {
-    return (EAttribute)initialGridEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)gridEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -186,9 +186,9 @@ public class LifeDslPackageImpl extends EPackageImpl implements LifeDslPackage
    * @generated
    */
   @Override
-  public EAttribute getInitialGrid_CellsY()
+  public EAttribute getGrid_Column()
   {
-    return (EAttribute)initialGridEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)gridEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -289,12 +289,12 @@ public class LifeDslPackageImpl extends EPackageImpl implements LifeDslPackage
 
     // Create classes and their features
     modelEClass = createEClass(MODEL);
-    createEReference(modelEClass, MODEL__GRID);
+    createEReference(modelEClass, MODEL__GRIDS);
     createEReference(modelEClass, MODEL__RULES);
 
-    initialGridEClass = createEClass(INITIAL_GRID);
-    createEAttribute(initialGridEClass, INITIAL_GRID__CELLS_X);
-    createEAttribute(initialGridEClass, INITIAL_GRID__CELLS_Y);
+    gridEClass = createEClass(GRID);
+    createEAttribute(gridEClass, GRID__ROW);
+    createEAttribute(gridEClass, GRID__COLUMN);
 
     evolutionRulesEClass = createEClass(EVOLUTION_RULES);
     createEAttribute(evolutionRulesEClass, EVOLUTION_RULES__NAME);
@@ -338,12 +338,12 @@ public class LifeDslPackageImpl extends EPackageImpl implements LifeDslPackage
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getModel_Grid(), this.getInitialGrid(), null, "grid", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getModel_Grids(), this.getGrid(), null, "grids", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getModel_Rules(), this.getEvolutionRules(), null, "rules", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(initialGridEClass, InitialGrid.class, "InitialGrid", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getInitialGrid_CellsX(), ecorePackage.getEString(), "cellsX", null, 0, 1, InitialGrid.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getInitialGrid_CellsY(), ecorePackage.getEString(), "cellsY", null, 0, 1, InitialGrid.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(gridEClass, Grid.class, "Grid", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getGrid_Row(), ecorePackage.getEInt(), "row", null, 0, 1, Grid.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getGrid_Column(), ecorePackage.getEInt(), "column", null, 0, 1, Grid.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(evolutionRulesEClass, EvolutionRules.class, "EvolutionRules", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getEvolutionRules_Name(), this.getDieAliveUnit(), "name", null, 0, 1, EvolutionRules.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -352,9 +352,9 @@ public class LifeDslPackageImpl extends EPackageImpl implements LifeDslPackage
 
     // Initialize enums and add enum literals
     initEEnum(operatorEEnum, Operator.class, "Operator");
-    addEEnumLiteral(operatorEEnum, Operator.LT);
     addEEnumLiteral(operatorEEnum, Operator.EQ);
-    addEEnumLiteral(operatorEEnum, Operator.GT);
+    addEEnumLiteral(operatorEEnum, Operator.L);
+    addEEnumLiteral(operatorEEnum, Operator.G);
 
     initEEnum(dieAliveUnitEEnum, DieAliveUnit.class, "DieAliveUnit");
     addEEnumLiteral(dieAliveUnitEEnum, DieAliveUnit.DIE);

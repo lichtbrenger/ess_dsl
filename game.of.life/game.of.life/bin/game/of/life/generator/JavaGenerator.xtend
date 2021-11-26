@@ -36,11 +36,9 @@ public class RulesOfLife {
 	 '''
 	 
  def static initialAlive(Model root)'''
-  String[] x = "«root.grid.cellsX»".split(" ");
-  String[] y = "«root.grid.cellsY»".split(" ");
-  for (int i = 0; i < x.length; i += 1) {
-  	survivingCells.add(new Point(Integer.parseInt(x[i]), Integer.parseInt(y[i])));
-  }
+  «FOR grid: root.grids»
+  	survivingCells.add(new Point(«grid.row»-1, «grid.column»-1));
+  «ENDFOR» 
   
 '''
 

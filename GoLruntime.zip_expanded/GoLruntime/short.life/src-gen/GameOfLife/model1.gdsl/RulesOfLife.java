@@ -5,11 +5,9 @@ import java.util.ArrayList;
  
 public class RulesOfLife {
 	public static void computeSurvivors(boolean[][] gameBoard, ArrayList<Point> survivingCells) {
-		String[] x = "1 2 3".split(" ");
-		String[] y = "1 2 3".split(" ");
-		for (int i = 0; i <= x.length; i += 1) {
-			survivingCells.add(new Point(Integer.parseInt(x[i]), Integer.parseInt(y[i]));
-		}
+		survivingCells.add(new Point(1-1, 1-1));
+		survivingCells.add(new Point(2-1, 2-1));
+		survivingCells.add(new Point(3-1, 3-1));
 		
      	// Iterate through the array, follow game of life rules
     	 for (int i=1; i<gameBoard.length-1; i++) {

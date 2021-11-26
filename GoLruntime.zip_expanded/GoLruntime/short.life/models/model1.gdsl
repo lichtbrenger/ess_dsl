@@ -1,5 +1,7 @@
 InitialGrid 
-CellsAliveX: "1 2 3" CellsAliveY: "1 2 3"
+Row: 1 Column: 1
+Row: 2 Column: 2
+Row: 3 Column: 3
 
 EvolutionRules 
 Rule: live ComparisonOperator: == NumberOfLiveNeighbors: 2

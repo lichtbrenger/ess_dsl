@@ -3,13 +3,13 @@ grammar game.of.life.LifeDsl with org.eclipse.xtext.common.Terminals
 generate lifeDsl "http://www.of.game/life/LifeDsl"
 
 Model:
-	'InitialGrid' grid = InitialGrid
+	'InitialGrid' (grids += Grid)*
 	'EvolutionRules' (rules += EvolutionRules)* 
 ;
 
-InitialGrid: 
-	'CellsAliveX:' cellsX = STRING
-	'CellsAliveY:' cellsY = STRING
+Grid: 
+	'Row:' row = INT
+	'Column:' column = INT
 ;
 
 EvolutionRules:

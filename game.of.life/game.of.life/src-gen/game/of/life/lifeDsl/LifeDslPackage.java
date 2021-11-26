@@ -69,13 +69,13 @@ public interface LifeDslPackage extends EPackage
   int MODEL = 0;
 
   /**
-   * The feature id for the '<em><b>Grid</b></em>' containment reference.
+   * The feature id for the '<em><b>Grids</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODEL__GRID = 0;
+  int MODEL__GRIDS = 0;
 
   /**
    * The feature id for the '<em><b>Rules</b></em>' containment reference list.
@@ -96,41 +96,41 @@ public interface LifeDslPackage extends EPackage
   int MODEL_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link game.of.life.lifeDsl.impl.InitialGridImpl <em>Initial Grid</em>}' class.
+   * The meta object id for the '{@link game.of.life.lifeDsl.impl.GridImpl <em>Grid</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see game.of.life.lifeDsl.impl.InitialGridImpl
-   * @see game.of.life.lifeDsl.impl.LifeDslPackageImpl#getInitialGrid()
+   * @see game.of.life.lifeDsl.impl.GridImpl
+   * @see game.of.life.lifeDsl.impl.LifeDslPackageImpl#getGrid()
    * @generated
    */
-  int INITIAL_GRID = 1;
+  int GRID = 1;
 
   /**
-   * The feature id for the '<em><b>Cells X</b></em>' attribute.
+   * The feature id for the '<em><b>Row</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INITIAL_GRID__CELLS_X = 0;
+  int GRID__ROW = 0;
 
   /**
-   * The feature id for the '<em><b>Cells Y</b></em>' attribute.
+   * The feature id for the '<em><b>Column</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INITIAL_GRID__CELLS_Y = 1;
+  int GRID__COLUMN = 1;
 
   /**
-   * The number of structural features of the '<em>Initial Grid</em>' class.
+   * The number of structural features of the '<em>Grid</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INITIAL_GRID_FEATURE_COUNT = 2;
+  int GRID_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link game.of.life.lifeDsl.impl.EvolutionRulesImpl <em>Evolution Rules</em>}' class.
@@ -210,15 +210,15 @@ public interface LifeDslPackage extends EPackage
   EClass getModel();
 
   /**
-   * Returns the meta object for the containment reference '{@link game.of.life.lifeDsl.Model#getGrid <em>Grid</em>}'.
+   * Returns the meta object for the containment reference list '{@link game.of.life.lifeDsl.Model#getGrids <em>Grids</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Grid</em>'.
-   * @see game.of.life.lifeDsl.Model#getGrid()
+   * @return the meta object for the containment reference list '<em>Grids</em>'.
+   * @see game.of.life.lifeDsl.Model#getGrids()
    * @see #getModel()
    * @generated
    */
-  EReference getModel_Grid();
+  EReference getModel_Grids();
 
   /**
    * Returns the meta object for the containment reference list '{@link game.of.life.lifeDsl.Model#getRules <em>Rules</em>}'.
@@ -232,36 +232,36 @@ public interface LifeDslPackage extends EPackage
   EReference getModel_Rules();
 
   /**
-   * Returns the meta object for class '{@link game.of.life.lifeDsl.InitialGrid <em>Initial Grid</em>}'.
+   * Returns the meta object for class '{@link game.of.life.lifeDsl.Grid <em>Grid</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Initial Grid</em>'.
-   * @see game.of.life.lifeDsl.InitialGrid
+   * @return the meta object for class '<em>Grid</em>'.
+   * @see game.of.life.lifeDsl.Grid
    * @generated
    */
-  EClass getInitialGrid();
+  EClass getGrid();
 
   /**
-   * Returns the meta object for the attribute '{@link game.of.life.lifeDsl.InitialGrid#getCellsX <em>Cells X</em>}'.
+   * Returns the meta object for the attribute '{@link game.of.life.lifeDsl.Grid#getRow <em>Row</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Cells X</em>'.
-   * @see game.of.life.lifeDsl.InitialGrid#getCellsX()
-   * @see #getInitialGrid()
+   * @return the meta object for the attribute '<em>Row</em>'.
+   * @see game.of.life.lifeDsl.Grid#getRow()
+   * @see #getGrid()
    * @generated
    */
-  EAttribute getInitialGrid_CellsX();
+  EAttribute getGrid_Row();
 
   /**
-   * Returns the meta object for the attribute '{@link game.of.life.lifeDsl.InitialGrid#getCellsY <em>Cells Y</em>}'.
+   * Returns the meta object for the attribute '{@link game.of.life.lifeDsl.Grid#getColumn <em>Column</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Cells Y</em>'.
-   * @see game.of.life.lifeDsl.InitialGrid#getCellsY()
-   * @see #getInitialGrid()
+   * @return the meta object for the attribute '<em>Column</em>'.
+   * @see game.of.life.lifeDsl.Grid#getColumn()
+   * @see #getGrid()
    * @generated
    */
-  EAttribute getInitialGrid_CellsY();
+  EAttribute getGrid_Column();
 
   /**
    * Returns the meta object for class '{@link game.of.life.lifeDsl.EvolutionRules <em>Evolution Rules</em>}'.
@@ -360,12 +360,12 @@ public interface LifeDslPackage extends EPackage
     EClass MODEL = eINSTANCE.getModel();
 
     /**
-     * The meta object literal for the '<em><b>Grid</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Grids</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MODEL__GRID = eINSTANCE.getModel_Grid();
+    EReference MODEL__GRIDS = eINSTANCE.getModel_Grids();
 
     /**
      * The meta object literal for the '<em><b>Rules</b></em>' containment reference list feature.
@@ -376,30 +376,30 @@ public interface LifeDslPackage extends EPackage
     EReference MODEL__RULES = eINSTANCE.getModel_Rules();
 
     /**
-     * The meta object literal for the '{@link game.of.life.lifeDsl.impl.InitialGridImpl <em>Initial Grid</em>}' class.
+     * The meta object literal for the '{@link game.of.life.lifeDsl.impl.GridImpl <em>Grid</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see game.of.life.lifeDsl.impl.InitialGridImpl
-     * @see game.of.life.lifeDsl.impl.LifeDslPackageImpl#getInitialGrid()
+     * @see game.of.life.lifeDsl.impl.GridImpl
+     * @see game.of.life.lifeDsl.impl.LifeDslPackageImpl#getGrid()
      * @generated
      */
-    EClass INITIAL_GRID = eINSTANCE.getInitialGrid();
+    EClass GRID = eINSTANCE.getGrid();
 
     /**
-     * The meta object literal for the '<em><b>Cells X</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Row</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute INITIAL_GRID__CELLS_X = eINSTANCE.getInitialGrid_CellsX();
+    EAttribute GRID__ROW = eINSTANCE.getGrid_Row();
 
     /**
-     * The meta object literal for the '<em><b>Cells Y</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Column</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute INITIAL_GRID__CELLS_Y = eINSTANCE.getInitialGrid_CellsY();
+    EAttribute GRID__COLUMN = eINSTANCE.getGrid_Column();
 
     /**
      * The meta object literal for the '{@link game.of.life.lifeDsl.impl.EvolutionRulesImpl <em>Evolution Rules</em>}' class.

@@ -5,7 +5,7 @@ package game.of.life.serializer;
 
 import com.google.inject.Inject;
 import game.of.life.lifeDsl.EvolutionRules;
-import game.of.life.lifeDsl.InitialGrid;
+import game.of.life.lifeDsl.Grid;
 import game.of.life.lifeDsl.LifeDslPackage;
 import game.of.life.lifeDsl.Model;
 import game.of.life.services.LifeDslGrammarAccess;
@@ -37,8 +37,8 @@ public class LifeDslSemanticSequencer extends AbstractDelegatingSemanticSequence
 			case LifeDslPackage.EVOLUTION_RULES:
 				sequence_EvolutionRules(context, (EvolutionRules) semanticObject); 
 				return; 
-			case LifeDslPackage.INITIAL_GRID:
-				sequence_InitialGrid(context, (InitialGrid) semanticObject); 
+			case LifeDslPackage.GRID:
+				sequence_Grid(context, (Grid) semanticObject); 
 				return; 
 			case LifeDslPackage.MODEL:
 				sequence_Model(context, (Model) semanticObject); 
@@ -74,21 +74,21 @@ public class LifeDslSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
-	 *     InitialGrid returns InitialGrid
+	 *     Grid returns Grid
 	 *
 	 * Constraint:
-	 *     (cellsX=STRING cellsY=STRING)
+	 *     (row=INT column=INT)
 	 */
-	protected void sequence_InitialGrid(ISerializationContext context, InitialGrid semanticObject) {
+	protected void sequence_Grid(ISerializationContext context, Grid semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, LifeDslPackage.Literals.INITIAL_GRID__CELLS_X) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LifeDslPackage.Literals.INITIAL_GRID__CELLS_X));
-			if (transientValues.isValueTransient(semanticObject, LifeDslPackage.Literals.INITIAL_GRID__CELLS_Y) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LifeDslPackage.Literals.INITIAL_GRID__CELLS_Y));
+			if (transientValues.isValueTransient(semanticObject, LifeDslPackage.Literals.GRID__ROW) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LifeDslPackage.Literals.GRID__ROW));
+			if (transientValues.isValueTransient(semanticObject, LifeDslPackage.Literals.GRID__COLUMN) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LifeDslPackage.Literals.GRID__COLUMN));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getInitialGridAccess().getCellsXSTRINGTerminalRuleCall_1_0(), semanticObject.getCellsX());
-		feeder.accept(grammarAccess.getInitialGridAccess().getCellsYSTRINGTerminalRuleCall_3_0(), semanticObject.getCellsY());
+		feeder.accept(grammarAccess.getGridAccess().getRowINTTerminalRuleCall_1_0(), semanticObject.getRow());
+		feeder.accept(grammarAccess.getGridAccess().getColumnINTTerminalRuleCall_3_0(), semanticObject.getColumn());
 		feeder.finish();
 	}
 	
@@ -98,7 +98,7 @@ public class LifeDslSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Model returns Model
 	 *
 	 * Constraint:
-	 *     (grid=InitialGrid rules+=EvolutionRules*)
+	 *     (grids+=Grid* rules+=EvolutionRules*)
 	 */
 	protected void sequence_Model(ISerializationContext context, Model semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

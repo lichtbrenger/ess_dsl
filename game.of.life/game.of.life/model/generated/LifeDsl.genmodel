@@ -7,9 +7,9 @@
   <genPackages prefix="LifeDsl" basePackage="game.of.life" disposableProviderFactory="true"
       fileExtensions="gdsl" ecorePackage="LifeDsl.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="LifeDsl.ecore#//Operator">
-      <genEnumLiterals ecoreEnumLiteral="LifeDsl.ecore#//Operator/LT"/>
       <genEnumLiterals ecoreEnumLiteral="LifeDsl.ecore#//Operator/EQ"/>
-      <genEnumLiterals ecoreEnumLiteral="LifeDsl.ecore#//Operator/GT"/>
+      <genEnumLiterals ecoreEnumLiteral="LifeDsl.ecore#//Operator/L"/>
+      <genEnumLiterals ecoreEnumLiteral="LifeDsl.ecore#//Operator/G"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="LifeDsl.ecore#//DieAliveUnit">
       <genEnumLiterals ecoreEnumLiteral="LifeDsl.ecore#//DieAliveUnit/DIE"/>
@@ -17,12 +17,12 @@
       <genEnumLiterals ecoreEnumLiteral="LifeDsl.ecore#//DieAliveUnit/BECOME_ALIVE"/>
     </genEnums>
     <genClasses ecoreClass="LifeDsl.ecore#//Model">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LifeDsl.ecore#//Model/grid"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LifeDsl.ecore#//Model/grids"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LifeDsl.ecore#//Model/rules"/>
     </genClasses>
-    <genClasses ecoreClass="LifeDsl.ecore#//InitialGrid">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LifeDsl.ecore#//InitialGrid/cellsX"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LifeDsl.ecore#//InitialGrid/cellsY"/>
+    <genClasses ecoreClass="LifeDsl.ecore#//Grid">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LifeDsl.ecore#//Grid/row"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LifeDsl.ecore#//Grid/column"/>
     </genClasses>
     <genClasses ecoreClass="LifeDsl.ecore#//EvolutionRules">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LifeDsl.ecore#//EvolutionRules/name"/>

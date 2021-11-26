@@ -34,12 +34,12 @@ public class LifeDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getOperatorAccess().getAlternatives(), "rule__Operator__Alternatives");
 			builder.put(grammarAccess.getDieAliveUnitAccess().getAlternatives(), "rule__DieAliveUnit__Alternatives");
 			builder.put(grammarAccess.getModelAccess().getGroup(), "rule__Model__Group__0");
-			builder.put(grammarAccess.getInitialGridAccess().getGroup(), "rule__InitialGrid__Group__0");
+			builder.put(grammarAccess.getGridAccess().getGroup(), "rule__Grid__Group__0");
 			builder.put(grammarAccess.getEvolutionRulesAccess().getGroup(), "rule__EvolutionRules__Group__0");
-			builder.put(grammarAccess.getModelAccess().getGridAssignment_1(), "rule__Model__GridAssignment_1");
+			builder.put(grammarAccess.getModelAccess().getGridsAssignment_1(), "rule__Model__GridsAssignment_1");
 			builder.put(grammarAccess.getModelAccess().getRulesAssignment_3(), "rule__Model__RulesAssignment_3");
-			builder.put(grammarAccess.getInitialGridAccess().getCellsXAssignment_1(), "rule__InitialGrid__CellsXAssignment_1");
-			builder.put(grammarAccess.getInitialGridAccess().getCellsYAssignment_3(), "rule__InitialGrid__CellsYAssignment_3");
+			builder.put(grammarAccess.getGridAccess().getRowAssignment_1(), "rule__Grid__RowAssignment_1");
+			builder.put(grammarAccess.getGridAccess().getColumnAssignment_3(), "rule__Grid__ColumnAssignment_3");
 			builder.put(grammarAccess.getEvolutionRulesAccess().getNameAssignment_1(), "rule__EvolutionRules__NameAssignment_1");
 			builder.put(grammarAccess.getEvolutionRulesAccess().getOperatorAssignment_3(), "rule__EvolutionRules__OperatorAssignment_3");
 			builder.put(grammarAccess.getEvolutionRulesAccess().getNumberOfLiveNeighborsAssignment_5(), "rule__EvolutionRules__NumberOfLiveNeighborsAssignment_5");

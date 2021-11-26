@@ -3,7 +3,7 @@
  */
 package game.of.life.lifeDsl.impl;
 
-import game.of.life.lifeDsl.InitialGrid;
+import game.of.life.lifeDsl.Grid;
 import game.of.life.lifeDsl.LifeDslPackage;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -15,66 +15,66 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Initial Grid</b></em>'.
+ * An implementation of the model object '<em><b>Grid</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link game.of.life.lifeDsl.impl.InitialGridImpl#getCellsX <em>Cells X</em>}</li>
- *   <li>{@link game.of.life.lifeDsl.impl.InitialGridImpl#getCellsY <em>Cells Y</em>}</li>
+ *   <li>{@link game.of.life.lifeDsl.impl.GridImpl#getRow <em>Row</em>}</li>
+ *   <li>{@link game.of.life.lifeDsl.impl.GridImpl#getColumn <em>Column</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class InitialGridImpl extends MinimalEObjectImpl.Container implements InitialGrid
+public class GridImpl extends MinimalEObjectImpl.Container implements Grid
 {
   /**
-   * The default value of the '{@link #getCellsX() <em>Cells X</em>}' attribute.
+   * The default value of the '{@link #getRow() <em>Row</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCellsX()
+   * @see #getRow()
    * @generated
    * @ordered
    */
-  protected static final String CELLS_X_EDEFAULT = null;
+  protected static final int ROW_EDEFAULT = 0;
 
   /**
-   * The cached value of the '{@link #getCellsX() <em>Cells X</em>}' attribute.
+   * The cached value of the '{@link #getRow() <em>Row</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCellsX()
+   * @see #getRow()
    * @generated
    * @ordered
    */
-  protected String cellsX = CELLS_X_EDEFAULT;
+  protected int row = ROW_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getCellsY() <em>Cells Y</em>}' attribute.
+   * The default value of the '{@link #getColumn() <em>Column</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCellsY()
+   * @see #getColumn()
    * @generated
    * @ordered
    */
-  protected static final String CELLS_Y_EDEFAULT = null;
+  protected static final int COLUMN_EDEFAULT = 0;
 
   /**
-   * The cached value of the '{@link #getCellsY() <em>Cells Y</em>}' attribute.
+   * The cached value of the '{@link #getColumn() <em>Column</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCellsY()
+   * @see #getColumn()
    * @generated
    * @ordered
    */
-  protected String cellsY = CELLS_Y_EDEFAULT;
+  protected int column = COLUMN_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected InitialGridImpl()
+  protected GridImpl()
   {
     super();
   }
@@ -87,7 +87,7 @@ public class InitialGridImpl extends MinimalEObjectImpl.Container implements Ini
   @Override
   protected EClass eStaticClass()
   {
-    return LifeDslPackage.Literals.INITIAL_GRID;
+    return LifeDslPackage.Literals.GRID;
   }
 
   /**
@@ -96,9 +96,9 @@ public class InitialGridImpl extends MinimalEObjectImpl.Container implements Ini
    * @generated
    */
   @Override
-  public String getCellsX()
+  public int getRow()
   {
-    return cellsX;
+    return row;
   }
 
   /**
@@ -107,12 +107,12 @@ public class InitialGridImpl extends MinimalEObjectImpl.Container implements Ini
    * @generated
    */
   @Override
-  public void setCellsX(String newCellsX)
+  public void setRow(int newRow)
   {
-    String oldCellsX = cellsX;
-    cellsX = newCellsX;
+    int oldRow = row;
+    row = newRow;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LifeDslPackage.INITIAL_GRID__CELLS_X, oldCellsX, cellsX));
+      eNotify(new ENotificationImpl(this, Notification.SET, LifeDslPackage.GRID__ROW, oldRow, row));
   }
 
   /**
@@ -121,9 +121,9 @@ public class InitialGridImpl extends MinimalEObjectImpl.Container implements Ini
    * @generated
    */
   @Override
-  public String getCellsY()
+  public int getColumn()
   {
-    return cellsY;
+    return column;
   }
 
   /**
@@ -132,12 +132,12 @@ public class InitialGridImpl extends MinimalEObjectImpl.Container implements Ini
    * @generated
    */
   @Override
-  public void setCellsY(String newCellsY)
+  public void setColumn(int newColumn)
   {
-    String oldCellsY = cellsY;
-    cellsY = newCellsY;
+    int oldColumn = column;
+    column = newColumn;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LifeDslPackage.INITIAL_GRID__CELLS_Y, oldCellsY, cellsY));
+      eNotify(new ENotificationImpl(this, Notification.SET, LifeDslPackage.GRID__COLUMN, oldColumn, column));
   }
 
   /**
@@ -150,10 +150,10 @@ public class InitialGridImpl extends MinimalEObjectImpl.Container implements Ini
   {
     switch (featureID)
     {
-      case LifeDslPackage.INITIAL_GRID__CELLS_X:
-        return getCellsX();
-      case LifeDslPackage.INITIAL_GRID__CELLS_Y:
-        return getCellsY();
+      case LifeDslPackage.GRID__ROW:
+        return getRow();
+      case LifeDslPackage.GRID__COLUMN:
+        return getColumn();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -168,11 +168,11 @@ public class InitialGridImpl extends MinimalEObjectImpl.Container implements Ini
   {
     switch (featureID)
     {
-      case LifeDslPackage.INITIAL_GRID__CELLS_X:
-        setCellsX((String)newValue);
+      case LifeDslPackage.GRID__ROW:
+        setRow((Integer)newValue);
         return;
-      case LifeDslPackage.INITIAL_GRID__CELLS_Y:
-        setCellsY((String)newValue);
+      case LifeDslPackage.GRID__COLUMN:
+        setColumn((Integer)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -188,11 +188,11 @@ public class InitialGridImpl extends MinimalEObjectImpl.Container implements Ini
   {
     switch (featureID)
     {
-      case LifeDslPackage.INITIAL_GRID__CELLS_X:
-        setCellsX(CELLS_X_EDEFAULT);
+      case LifeDslPackage.GRID__ROW:
+        setRow(ROW_EDEFAULT);
         return;
-      case LifeDslPackage.INITIAL_GRID__CELLS_Y:
-        setCellsY(CELLS_Y_EDEFAULT);
+      case LifeDslPackage.GRID__COLUMN:
+        setColumn(COLUMN_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -208,10 +208,10 @@ public class InitialGridImpl extends MinimalEObjectImpl.Container implements Ini
   {
     switch (featureID)
     {
-      case LifeDslPackage.INITIAL_GRID__CELLS_X:
-        return CELLS_X_EDEFAULT == null ? cellsX != null : !CELLS_X_EDEFAULT.equals(cellsX);
-      case LifeDslPackage.INITIAL_GRID__CELLS_Y:
-        return CELLS_Y_EDEFAULT == null ? cellsY != null : !CELLS_Y_EDEFAULT.equals(cellsY);
+      case LifeDslPackage.GRID__ROW:
+        return row != ROW_EDEFAULT;
+      case LifeDslPackage.GRID__COLUMN:
+        return column != COLUMN_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -227,12 +227,12 @@ public class InitialGridImpl extends MinimalEObjectImpl.Container implements Ini
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (cellsX: ");
-    result.append(cellsX);
-    result.append(", cellsY: ");
-    result.append(cellsY);
+    result.append(" (row: ");
+    result.append(row);
+    result.append(", column: ");
+    result.append(column);
     result.append(')');
     return result.toString();
   }
 
-} //InitialGridImpl
+} //GridImpl

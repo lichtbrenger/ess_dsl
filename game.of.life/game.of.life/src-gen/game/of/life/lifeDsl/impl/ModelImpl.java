@@ -4,13 +4,12 @@
 package game.of.life.lifeDsl.impl;
 
 import game.of.life.lifeDsl.EvolutionRules;
-import game.of.life.lifeDsl.InitialGrid;
+import game.of.life.lifeDsl.Grid;
 import game.of.life.lifeDsl.LifeDslPackage;
 import game.of.life.lifeDsl.Model;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -18,7 +17,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -32,7 +30,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link game.of.life.lifeDsl.impl.ModelImpl#getGrid <em>Grid</em>}</li>
+ *   <li>{@link game.of.life.lifeDsl.impl.ModelImpl#getGrids <em>Grids</em>}</li>
  *   <li>{@link game.of.life.lifeDsl.impl.ModelImpl#getRules <em>Rules</em>}</li>
  * </ul>
  *
@@ -41,14 +39,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class ModelImpl extends MinimalEObjectImpl.Container implements Model
 {
   /**
-   * The cached value of the '{@link #getGrid() <em>Grid</em>}' containment reference.
+   * The cached value of the '{@link #getGrids() <em>Grids</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getGrid()
+   * @see #getGrids()
    * @generated
    * @ordered
    */
-  protected InitialGrid grid;
+  protected EList<Grid> grids;
 
   /**
    * The cached value of the '{@link #getRules() <em>Rules</em>}' containment reference list.
@@ -87,48 +85,13 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * @generated
    */
   @Override
-  public InitialGrid getGrid()
+  public EList<Grid> getGrids()
   {
-    return grid;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetGrid(InitialGrid newGrid, NotificationChain msgs)
-  {
-    InitialGrid oldGrid = grid;
-    grid = newGrid;
-    if (eNotificationRequired())
+    if (grids == null)
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LifeDslPackage.MODEL__GRID, oldGrid, newGrid);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      grids = new EObjectContainmentEList<Grid>(Grid.class, this, LifeDslPackage.MODEL__GRIDS);
     }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setGrid(InitialGrid newGrid)
-  {
-    if (newGrid != grid)
-    {
-      NotificationChain msgs = null;
-      if (grid != null)
-        msgs = ((InternalEObject)grid).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LifeDslPackage.MODEL__GRID, null, msgs);
-      if (newGrid != null)
-        msgs = ((InternalEObject)newGrid).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LifeDslPackage.MODEL__GRID, null, msgs);
-      msgs = basicSetGrid(newGrid, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LifeDslPackage.MODEL__GRID, newGrid, newGrid));
+    return grids;
   }
 
   /**
@@ -156,8 +119,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case LifeDslPackage.MODEL__GRID:
-        return basicSetGrid(null, msgs);
+      case LifeDslPackage.MODEL__GRIDS:
+        return ((InternalEList<?>)getGrids()).basicRemove(otherEnd, msgs);
       case LifeDslPackage.MODEL__RULES:
         return ((InternalEList<?>)getRules()).basicRemove(otherEnd, msgs);
     }
@@ -174,8 +137,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case LifeDslPackage.MODEL__GRID:
-        return getGrid();
+      case LifeDslPackage.MODEL__GRIDS:
+        return getGrids();
       case LifeDslPackage.MODEL__RULES:
         return getRules();
     }
@@ -193,8 +156,9 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case LifeDslPackage.MODEL__GRID:
-        setGrid((InitialGrid)newValue);
+      case LifeDslPackage.MODEL__GRIDS:
+        getGrids().clear();
+        getGrids().addAll((Collection<? extends Grid>)newValue);
         return;
       case LifeDslPackage.MODEL__RULES:
         getRules().clear();
@@ -214,8 +178,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case LifeDslPackage.MODEL__GRID:
-        setGrid((InitialGrid)null);
+      case LifeDslPackage.MODEL__GRIDS:
+        getGrids().clear();
         return;
       case LifeDslPackage.MODEL__RULES:
         getRules().clear();
@@ -234,8 +198,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case LifeDslPackage.MODEL__GRID:
-        return grid != null;
+      case LifeDslPackage.MODEL__GRIDS:
+        return grids != null && !grids.isEmpty();
       case LifeDslPackage.MODEL__RULES:
         return rules != null && !rules.isEmpty();
     }

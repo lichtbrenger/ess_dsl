@@ -81,9 +81,9 @@ public class LifeDslAdapterFactory extends AdapterFactoryImpl
         return createModelAdapter();
       }
       @Override
-      public Adapter caseInitialGrid(InitialGrid object)
+      public Adapter caseGrid(Grid object)
       {
-        return createInitialGridAdapter();
+        return createGridAdapter();
       }
       @Override
       public Adapter caseEvolutionRules(EvolutionRules object)
@@ -128,16 +128,16 @@ public class LifeDslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link game.of.life.lifeDsl.InitialGrid <em>Initial Grid</em>}'.
+   * Creates a new adapter for an object of class '{@link game.of.life.lifeDsl.Grid <em>Grid</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see game.of.life.lifeDsl.InitialGrid
+   * @see game.of.life.lifeDsl.Grid
    * @generated
    */
-  public Adapter createInitialGridAdapter()
+  public Adapter createGridAdapter()
   {
     return null;
   }

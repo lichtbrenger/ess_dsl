@@ -33,13 +33,13 @@ public interface LifeDslFactory extends EFactory
   Model createModel();
 
   /**
-   * Returns a new object of class '<em>Initial Grid</em>'.
+   * Returns a new object of class '<em>Grid</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Initial Grid</em>'.
+   * @return a new object of class '<em>Grid</em>'.
    * @generated
    */
-  InitialGrid createInitialGrid();
+  Grid createGrid();
 
   /**
    * Returns a new object of class '<em>Evolution Rules</em>'.

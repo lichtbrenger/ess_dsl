@@ -8,8 +8,6 @@ Model:
 ;
 
 InitialGrid: 
-//	'Rows:' rows = INT 
-//	'Columns:' columns = INT
 	'CellsAliveX:' cellsX = STRING
 	'CellsAliveY:' cellsY = STRING
 ;

@@ -3,6 +3,11 @@
  */
 package game.of.life.validation;
 
+import game.of.life.lifeDsl.Grid;
+import game.of.life.lifeDsl.Model;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.xtext.validation.Check;
+
 /**
  * This class contains custom validation rules.
  * 
@@ -10,4 +15,15 @@ package game.of.life.validation;
  */
 @SuppressWarnings("all")
 public class LifeDslValidator extends AbstractLifeDslValidator {
+  @Check
+  public void checkDoubleInitialGrids(final Model root) {
+    EList<Grid> glist = root.getGrids();
+    for (int i = 0; (i < glist.size()); i++) {
+      for (int j = (i + 1); (j < glist.size()); j++) {
+        if ((Integer.valueOf(glist.get(i).getRow()).equals(Integer.valueOf(glist.get(j).getRow())) && Integer.valueOf(glist.get(i).getColumn()).equals(Integer.valueOf(glist.get(j).getColumn())))) {
+          this.error("Double grid", null);
+        }
+      }
+    }
+  }
 }

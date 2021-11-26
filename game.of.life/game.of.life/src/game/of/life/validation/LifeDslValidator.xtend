@@ -3,6 +3,8 @@
  */
 package game.of.life.validation
 
+import game.of.life.lifeDsl.Model
+import org.eclipse.xtext.validation.Check
 
 /**
  * This class contains custom validation rules. 
@@ -11,15 +13,19 @@ package game.of.life.validation
  */
 class LifeDslValidator extends AbstractLifeDslValidator {
 	
-//	public static val INVALID_NAME = 'invalidName'
-//
-//	@Check
-//	def checkGreetingStartsWithCapital(Greeting greeting) {
-//		if (!Character.isUpperCase(greeting.name.charAt(0))) {
-//			warning('Name should start with a capital', 
-//					LifeDslPackage.Literals.GREETING__NAME,
-//					INVALID_NAME)
-//		}
-//	}
+@Check
+    def checkDoubleInitialGrids(Model root) {
+        var glist = root.grids // lists start at position 0
+        for (var i = 0; i < glist.size; i++) {
+            for (var j = i + 1; j < glist.size; j++) {
+                if (
+                	glist.get(i).row.equals(glist.get(j).row) 
+                	&& glist.get(i).column.equals(glist.get(j).column)
+                ) {
+                    error("Double grid", null)
+                }
+            }
+        }
+    }
 	
 }

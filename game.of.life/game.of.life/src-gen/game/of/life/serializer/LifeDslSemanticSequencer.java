@@ -77,24 +77,18 @@ public class LifeDslSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     InitialGrid returns InitialGrid
 	 *
 	 * Constraint:
-	 *     (rows=INT columns=INT cellsX=STRING cellsY=STRING)
+	 *     (cellsX=STRING cellsY=STRING)
 	 */
 	protected void sequence_InitialGrid(ISerializationContext context, InitialGrid semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, LifeDslPackage.Literals.INITIAL_GRID__ROWS) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LifeDslPackage.Literals.INITIAL_GRID__ROWS));
-			if (transientValues.isValueTransient(semanticObject, LifeDslPackage.Literals.INITIAL_GRID__COLUMNS) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LifeDslPackage.Literals.INITIAL_GRID__COLUMNS));
 			if (transientValues.isValueTransient(semanticObject, LifeDslPackage.Literals.INITIAL_GRID__CELLS_X) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LifeDslPackage.Literals.INITIAL_GRID__CELLS_X));
 			if (transientValues.isValueTransient(semanticObject, LifeDslPackage.Literals.INITIAL_GRID__CELLS_Y) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LifeDslPackage.Literals.INITIAL_GRID__CELLS_Y));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getInitialGridAccess().getRowsINTTerminalRuleCall_1_0(), semanticObject.getRows());
-		feeder.accept(grammarAccess.getInitialGridAccess().getColumnsINTTerminalRuleCall_3_0(), semanticObject.getColumns());
-		feeder.accept(grammarAccess.getInitialGridAccess().getCellsXSTRINGTerminalRuleCall_5_0(), semanticObject.getCellsX());
-		feeder.accept(grammarAccess.getInitialGridAccess().getCellsYSTRINGTerminalRuleCall_7_0(), semanticObject.getCellsY());
+		feeder.accept(grammarAccess.getInitialGridAccess().getCellsXSTRINGTerminalRuleCall_1_0(), semanticObject.getCellsX());
+		feeder.accept(grammarAccess.getInitialGridAccess().getCellsYSTRINGTerminalRuleCall_3_0(), semanticObject.getCellsY());
 		feeder.finish();
 	}
 	

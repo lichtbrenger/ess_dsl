@@ -142,59 +142,15 @@ ruleInitialGrid returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='Rows:'
+		otherlv_0='CellsAliveX:'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getInitialGridAccess().getRowsKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getInitialGridAccess().getCellsAliveXKeyword_0());
 		}
 		(
 			(
-				lv_rows_1_0=RULE_INT
+				lv_cellsX_1_0=RULE_STRING
 				{
-					newLeafNode(lv_rows_1_0, grammarAccess.getInitialGridAccess().getRowsINTTerminalRuleCall_1_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getInitialGridRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"rows",
-						lv_rows_1_0,
-						"org.eclipse.xtext.common.Terminals.INT");
-				}
-			)
-		)
-		otherlv_2='Columns:'
-		{
-			newLeafNode(otherlv_2, grammarAccess.getInitialGridAccess().getColumnsKeyword_2());
-		}
-		(
-			(
-				lv_columns_3_0=RULE_INT
-				{
-					newLeafNode(lv_columns_3_0, grammarAccess.getInitialGridAccess().getColumnsINTTerminalRuleCall_3_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getInitialGridRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"columns",
-						lv_columns_3_0,
-						"org.eclipse.xtext.common.Terminals.INT");
-				}
-			)
-		)
-		otherlv_4='CellsAliveX:'
-		{
-			newLeafNode(otherlv_4, grammarAccess.getInitialGridAccess().getCellsAliveXKeyword_4());
-		}
-		(
-			(
-				lv_cellsX_5_0=RULE_STRING
-				{
-					newLeafNode(lv_cellsX_5_0, grammarAccess.getInitialGridAccess().getCellsXSTRINGTerminalRuleCall_5_0());
+					newLeafNode(lv_cellsX_1_0, grammarAccess.getInitialGridAccess().getCellsXSTRINGTerminalRuleCall_1_0());
 				}
 				{
 					if ($current==null) {
@@ -203,20 +159,20 @@ ruleInitialGrid returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"cellsX",
-						lv_cellsX_5_0,
+						lv_cellsX_1_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)
-		otherlv_6='CellsAliveY:'
+		otherlv_2='CellsAliveY:'
 		{
-			newLeafNode(otherlv_6, grammarAccess.getInitialGridAccess().getCellsAliveYKeyword_6());
+			newLeafNode(otherlv_2, grammarAccess.getInitialGridAccess().getCellsAliveYKeyword_2());
 		}
 		(
 			(
-				lv_cellsY_7_0=RULE_STRING
+				lv_cellsY_3_0=RULE_STRING
 				{
-					newLeafNode(lv_cellsY_7_0, grammarAccess.getInitialGridAccess().getCellsYSTRINGTerminalRuleCall_7_0());
+					newLeafNode(lv_cellsY_3_0, grammarAccess.getInitialGridAccess().getCellsYSTRINGTerminalRuleCall_3_0());
 				}
 				{
 					if ($current==null) {
@@ -225,7 +181,7 @@ ruleInitialGrid returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"cellsY",
-						lv_cellsY_7_0,
+						lv_cellsY_3_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
@@ -338,7 +294,7 @@ ruleOperator returns [Enumerator current=null]
 		)
 		    |
 		(
-			enumLiteral_1='='
+			enumLiteral_1='=='
 			{
 				$current = grammarAccess.getOperatorAccess().getEQEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
 				newLeafNode(enumLiteral_1, grammarAccess.getOperatorAccess().getEQEnumLiteralDeclaration_1());

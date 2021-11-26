@@ -14,8 +14,6 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link game.of.life.lifeDsl.InitialGrid#getRows <em>Rows</em>}</li>
- *   <li>{@link game.of.life.lifeDsl.InitialGrid#getColumns <em>Columns</em>}</li>
  *   <li>{@link game.of.life.lifeDsl.InitialGrid#getCellsX <em>Cells X</em>}</li>
  *   <li>{@link game.of.life.lifeDsl.InitialGrid#getCellsY <em>Cells Y</em>}</li>
  * </ul>
@@ -26,50 +24,6 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface InitialGrid extends EObject
 {
-  /**
-   * Returns the value of the '<em><b>Rows</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Rows</em>' attribute.
-   * @see #setRows(int)
-   * @see game.of.life.lifeDsl.LifeDslPackage#getInitialGrid_Rows()
-   * @model
-   * @generated
-   */
-  int getRows();
-
-  /**
-   * Sets the value of the '{@link game.of.life.lifeDsl.InitialGrid#getRows <em>Rows</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Rows</em>' attribute.
-   * @see #getRows()
-   * @generated
-   */
-  void setRows(int value);
-
-  /**
-   * Returns the value of the '<em><b>Columns</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Columns</em>' attribute.
-   * @see #setColumns(int)
-   * @see game.of.life.lifeDsl.LifeDslPackage#getInitialGrid_Columns()
-   * @model
-   * @generated
-   */
-  int getColumns();
-
-  /**
-   * Sets the value of the '{@link game.of.life.lifeDsl.InitialGrid#getColumns <em>Columns</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Columns</em>' attribute.
-   * @see #getColumns()
-   * @generated
-   */
-  void setColumns(int value);
-
   /**
    * Returns the value of the '<em><b>Cells X</b></em>' attribute.
    * <!-- begin-user-doc -->

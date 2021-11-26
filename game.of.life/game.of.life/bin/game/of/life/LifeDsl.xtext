@@ -8,8 +8,8 @@ Model:
 ;
 
 InitialGrid: 
-	'Rows:' rows = INT 
-	'Columns:' columns = INT
+//	'Rows:' rows = INT 
+//	'Columns:' columns = INT
 	'CellsAliveX:' cellsX = STRING
 	'CellsAliveY:' cellsY = STRING
 ;
@@ -21,9 +21,9 @@ EvolutionRules:
 ;
 
 enum Operator:
-	LT = '<' |
-	EQ = '=' |
-	GT = '>'
+	EQ = '==' |
+	L = '<' |
+	G = '>'
 ;
 
 enum DieAliveUnit:

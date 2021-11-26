@@ -3,10 +3,13 @@
  */
 package game.of.life.generator;
 
+import game.of.life.lifeDsl.Model;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
+import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 
 /**
  * Generates code from your model files on save.
@@ -17,5 +20,13 @@ import org.eclipse.xtext.generator.IGeneratorContext;
 public class LifeDslGenerator extends AbstractGenerator {
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
+    EObject _head = IteratorExtensions.<EObject>head(resource.getAllContents());
+    final Model root = ((Model) _head);
+    if ((root != null)) {
+      String _lastSegment = resource.getURI().lastSegment();
+      String _plus = ("GameOfLife/" + _lastSegment);
+      String path = (_plus + "/");
+      fsa.generateFile((path + "RulesOfLife.java"), JavaGenerator.toJava(root));
+    }
   }
 }

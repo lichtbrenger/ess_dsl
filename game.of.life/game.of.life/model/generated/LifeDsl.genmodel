@@ -21,8 +21,6 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LifeDsl.ecore#//Model/rules"/>
     </genClasses>
     <genClasses ecoreClass="LifeDsl.ecore#//InitialGrid">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LifeDsl.ecore#//InitialGrid/rows"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LifeDsl.ecore#//InitialGrid/columns"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LifeDsl.ecore#//InitialGrid/cellsX"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LifeDsl.ecore#//InitialGrid/cellsY"/>
     </genClasses>

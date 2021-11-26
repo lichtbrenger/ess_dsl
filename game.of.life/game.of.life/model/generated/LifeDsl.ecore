@@ -8,8 +8,6 @@
         eType="#//EvolutionRules" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InitialGrid">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rows" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="columns" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="cellsX" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="cellsY" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
@@ -21,7 +19,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Operator">
     <eLiterals name="LT" literal="&lt;"/>
-    <eLiterals name="EQ" value="1" literal="="/>
+    <eLiterals name="EQ" value="1" literal="=="/>
     <eLiterals name="GT" value="2" literal=">"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="DieAliveUnit">

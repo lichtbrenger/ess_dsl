@@ -175,7 +175,7 @@ public class LifeDslPackageImpl extends EPackageImpl implements LifeDslPackage
    * @generated
    */
   @Override
-  public EAttribute getInitialGrid_Rows()
+  public EAttribute getInitialGrid_CellsX()
   {
     return (EAttribute)initialGridEClass.getEStructuralFeatures().get(0);
   }
@@ -186,31 +186,9 @@ public class LifeDslPackageImpl extends EPackageImpl implements LifeDslPackage
    * @generated
    */
   @Override
-  public EAttribute getInitialGrid_Columns()
-  {
-    return (EAttribute)initialGridEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getInitialGrid_CellsX()
-  {
-    return (EAttribute)initialGridEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EAttribute getInitialGrid_CellsY()
   {
-    return (EAttribute)initialGridEClass.getEStructuralFeatures().get(3);
+    return (EAttribute)initialGridEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -315,8 +293,6 @@ public class LifeDslPackageImpl extends EPackageImpl implements LifeDslPackage
     createEReference(modelEClass, MODEL__RULES);
 
     initialGridEClass = createEClass(INITIAL_GRID);
-    createEAttribute(initialGridEClass, INITIAL_GRID__ROWS);
-    createEAttribute(initialGridEClass, INITIAL_GRID__COLUMNS);
     createEAttribute(initialGridEClass, INITIAL_GRID__CELLS_X);
     createEAttribute(initialGridEClass, INITIAL_GRID__CELLS_Y);
 
@@ -366,8 +342,6 @@ public class LifeDslPackageImpl extends EPackageImpl implements LifeDslPackage
     initEReference(getModel_Rules(), this.getEvolutionRules(), null, "rules", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(initialGridEClass, InitialGrid.class, "InitialGrid", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getInitialGrid_Rows(), ecorePackage.getEInt(), "rows", null, 0, 1, InitialGrid.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getInitialGrid_Columns(), ecorePackage.getEInt(), "columns", null, 0, 1, InitialGrid.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getInitialGrid_CellsX(), ecorePackage.getEString(), "cellsX", null, 0, 1, InitialGrid.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getInitialGrid_CellsY(), ecorePackage.getEString(), "cellsY", null, 0, 1, InitialGrid.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

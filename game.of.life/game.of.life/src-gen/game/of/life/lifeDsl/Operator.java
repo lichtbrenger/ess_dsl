@@ -38,7 +38,7 @@ public enum Operator implements Enumerator
    * @generated
    * @ordered
    */
-  EQ(1, "EQ", "="),
+  EQ(1, "EQ", "=="),
 
   /**
    * The '<em><b>GT</b></em>' literal object.
@@ -66,7 +66,7 @@ public enum Operator implements Enumerator
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #EQ
-   * @model literal="="
+   * @model literal="=="
    * @generated
    * @ordered
    */

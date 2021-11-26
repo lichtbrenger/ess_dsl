@@ -106,31 +106,13 @@ public interface LifeDslPackage extends EPackage
   int INITIAL_GRID = 1;
 
   /**
-   * The feature id for the '<em><b>Rows</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INITIAL_GRID__ROWS = 0;
-
-  /**
-   * The feature id for the '<em><b>Columns</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INITIAL_GRID__COLUMNS = 1;
-
-  /**
    * The feature id for the '<em><b>Cells X</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INITIAL_GRID__CELLS_X = 2;
+  int INITIAL_GRID__CELLS_X = 0;
 
   /**
    * The feature id for the '<em><b>Cells Y</b></em>' attribute.
@@ -139,7 +121,7 @@ public interface LifeDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INITIAL_GRID__CELLS_Y = 3;
+  int INITIAL_GRID__CELLS_Y = 1;
 
   /**
    * The number of structural features of the '<em>Initial Grid</em>' class.
@@ -148,7 +130,7 @@ public interface LifeDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INITIAL_GRID_FEATURE_COUNT = 4;
+  int INITIAL_GRID_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link game.of.life.lifeDsl.impl.EvolutionRulesImpl <em>Evolution Rules</em>}' class.
@@ -258,28 +240,6 @@ public interface LifeDslPackage extends EPackage
    * @generated
    */
   EClass getInitialGrid();
-
-  /**
-   * Returns the meta object for the attribute '{@link game.of.life.lifeDsl.InitialGrid#getRows <em>Rows</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Rows</em>'.
-   * @see game.of.life.lifeDsl.InitialGrid#getRows()
-   * @see #getInitialGrid()
-   * @generated
-   */
-  EAttribute getInitialGrid_Rows();
-
-  /**
-   * Returns the meta object for the attribute '{@link game.of.life.lifeDsl.InitialGrid#getColumns <em>Columns</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Columns</em>'.
-   * @see game.of.life.lifeDsl.InitialGrid#getColumns()
-   * @see #getInitialGrid()
-   * @generated
-   */
-  EAttribute getInitialGrid_Columns();
 
   /**
    * Returns the meta object for the attribute '{@link game.of.life.lifeDsl.InitialGrid#getCellsX <em>Cells X</em>}'.
@@ -424,22 +384,6 @@ public interface LifeDslPackage extends EPackage
      * @generated
      */
     EClass INITIAL_GRID = eINSTANCE.getInitialGrid();
-
-    /**
-     * The meta object literal for the '<em><b>Rows</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute INITIAL_GRID__ROWS = eINSTANCE.getInitialGrid_Rows();
-
-    /**
-     * The meta object literal for the '<em><b>Columns</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute INITIAL_GRID__COLUMNS = eINSTANCE.getInitialGrid_Columns();
 
     /**
      * The meta object literal for the '<em><b>Cells X</b></em>' attribute feature.

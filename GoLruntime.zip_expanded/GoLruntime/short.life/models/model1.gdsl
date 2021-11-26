@@ -1,0 +1,10 @@
+InitialGrid 
+CellsAliveX: "1 2 3" CellsAliveY: "1 2 3"
+
+EvolutionRules 
+Rule: live ComparisonOperator: == NumberOfLiveNeighbors: 2
+Rule: live ComparisonOperator: == NumberOfLiveNeighbors: 3
+Rule: die ComparisonOperator: < NumberOfLiveNeighbors: 2
+Rule: die ComparisonOperator: > NumberOfLiveNeighbors: 3
+Rule: become alive ComparisonOperator: == NumberOfLiveNeighbors: 3
+

@@ -61,4 +61,16 @@ public class LifeDslValidator extends AbstractLifeDslValidator {
       }
     }
   }
+  
+  @Check
+  public void checkEvolutionRules(final Model root) {
+    EList<EvolutionRules> rlist = root.getRules();
+    for (int i = 0; (i < rlist.size()); i++) {
+      for (int j = (i + 1); (j < rlist.size()); j++) {
+        if (((rlist.get(i).getName().equals(rlist.get(j).getName()) && rlist.get(i).getOperator().equals(rlist.get(j).getOperator())) && Integer.valueOf(rlist.get(i).getNumberOfLiveNeighbors()).equals(Integer.valueOf(rlist.get(j).getNumberOfLiveNeighbors())))) {
+          this.error("Double rule", null);
+        }
+      }
+    }
+  }
 }

@@ -59,4 +59,20 @@ class LifeDslValidator extends AbstractLifeDslValidator {
 				}
 			}
 	}
+	
+	@Check
+    def checkEvolutionRules(Model root) {
+            var rlist = root.rules // lists start at position 0
+            for (var i = 0; i < rlist.size; i++) {
+	            for (var j = i + 1; j < rlist.size; j++) {
+	                if (
+	                	rlist.get(i).name.equals(rlist.get(j).name) 
+	                	&& rlist.get(i).operator.equals(rlist.get(j).operator)
+	                	&& rlist.get(i).numberOfLiveNeighbors.equals(rlist.get(j).numberOfLiveNeighbors)
+	                ) {
+	                    error("Double rule", null)
+	                }
+	            }
+	        }
+	}
 }

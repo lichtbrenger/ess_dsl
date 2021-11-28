@@ -4,7 +4,7 @@ import game.of.life.lifeDsl.DieAliveUnit;
 import game.of.life.lifeDsl.EvolutionRules;
 import game.of.life.lifeDsl.Grid;
 import game.of.life.lifeDsl.Model;
-import game.of.life.lifeDsl.Operator;
+import game.of.life.lifeDsl.OperatorUnit;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtend2.lib.StringConcatenation;
 
@@ -121,7 +121,7 @@ public class JavaGenerator {
           boolean _tripleEquals = (_name == DieAliveUnit.LIVE);
           if (_tripleEquals) {
             _builder.append("if ((gameBoard[i][j]) && (surrounding ");
-            Operator _operator = rule.getOperator();
+            OperatorUnit _operator = rule.getOperator();
             _builder.append(_operator);
             _builder.append(" ");
             int _numberOfLiveNeighbors = rule.getNumberOfLiveNeighbors();
@@ -138,7 +138,7 @@ public class JavaGenerator {
             boolean _tripleEquals_1 = (_name_1 == DieAliveUnit.BECOME_ALIVE);
             if (_tripleEquals_1) {
               _builder.append("if ((!gameBoard[i][j]) && (surrounding ");
-              Operator _operator_1 = rule.getOperator();
+              OperatorUnit _operator_1 = rule.getOperator();
               _builder.append(_operator_1);
               _builder.append(" ");
               int _numberOfLiveNeighbors_1 = rule.getNumberOfLiveNeighbors();

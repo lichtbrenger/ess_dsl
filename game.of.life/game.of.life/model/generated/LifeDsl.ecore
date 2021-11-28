@@ -13,11 +13,11 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EvolutionRules">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="#//DieAliveUnit"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" eType="#//Operator"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" eType="#//OperatorUnit"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="numberOfLiveNeighbors"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="Operator">
+  <eClassifiers xsi:type="ecore:EEnum" name="OperatorUnit">
     <eLiterals name="EQ" literal="=="/>
     <eLiterals name="L" value="1" literal="&lt;"/>
     <eLiterals name="G" value="2" literal=">"/>

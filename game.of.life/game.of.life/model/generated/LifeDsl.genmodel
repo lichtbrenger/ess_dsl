@@ -6,10 +6,10 @@
     copyrightFields="false" runtimeVersion="2.20">
   <genPackages prefix="LifeDsl" basePackage="game.of.life" disposableProviderFactory="true"
       fileExtensions="gdsl" ecorePackage="LifeDsl.ecore#/">
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="LifeDsl.ecore#//Operator">
-      <genEnumLiterals ecoreEnumLiteral="LifeDsl.ecore#//Operator/EQ"/>
-      <genEnumLiterals ecoreEnumLiteral="LifeDsl.ecore#//Operator/L"/>
-      <genEnumLiterals ecoreEnumLiteral="LifeDsl.ecore#//Operator/G"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="LifeDsl.ecore#//OperatorUnit">
+      <genEnumLiterals ecoreEnumLiteral="LifeDsl.ecore#//OperatorUnit/EQ"/>
+      <genEnumLiterals ecoreEnumLiteral="LifeDsl.ecore#//OperatorUnit/L"/>
+      <genEnumLiterals ecoreEnumLiteral="LifeDsl.ecore#//OperatorUnit/G"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="LifeDsl.ecore#//DieAliveUnit">
       <genEnumLiterals ecoreEnumLiteral="LifeDsl.ecore#//DieAliveUnit/DIE"/>

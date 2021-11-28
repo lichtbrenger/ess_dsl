@@ -108,20 +108,20 @@ public class LifeDslGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final RuleCall cNameDieAliveUnitEnumRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cComparisonOperatorKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cOperatorAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cOperatorOperatorEnumRuleCall_3_0 = (RuleCall)cOperatorAssignment_3.eContents().get(0);
+		private final RuleCall cOperatorOperatorUnitEnumRuleCall_3_0 = (RuleCall)cOperatorAssignment_3.eContents().get(0);
 		private final Keyword cNumberOfLiveNeighborsKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Assignment cNumberOfLiveNeighborsAssignment_5 = (Assignment)cGroup.eContents().get(5);
 		private final RuleCall cNumberOfLiveNeighborsINTTerminalRuleCall_5_0 = (RuleCall)cNumberOfLiveNeighborsAssignment_5.eContents().get(0);
 		
 		//EvolutionRules:
 		//    'Rule:' name = DieAliveUnit
-		//    'ComparisonOperator:' operator = Operator
+		//    'ComparisonOperator:' operator = OperatorUnit
 		//    'NumberOfLiveNeighbors:' numberOfLiveNeighbors = INT
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Rule:' name = DieAliveUnit
-		//'ComparisonOperator:' operator = Operator
+		//'ComparisonOperator:' operator = OperatorUnit
 		//'NumberOfLiveNeighbors:' numberOfLiveNeighbors = INT
 		public Group getGroup() { return cGroup; }
 		
@@ -137,11 +137,11 @@ public class LifeDslGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//'ComparisonOperator:'
 		public Keyword getComparisonOperatorKeyword_2() { return cComparisonOperatorKeyword_2; }
 		
-		//operator = Operator
+		//operator = OperatorUnit
 		public Assignment getOperatorAssignment_3() { return cOperatorAssignment_3; }
 		
-		//Operator
-		public RuleCall getOperatorOperatorEnumRuleCall_3_0() { return cOperatorOperatorEnumRuleCall_3_0; }
+		//OperatorUnit
+		public RuleCall getOperatorOperatorUnitEnumRuleCall_3_0() { return cOperatorOperatorUnitEnumRuleCall_3_0; }
 		
 		//'NumberOfLiveNeighbors:'
 		public Keyword getNumberOfLiveNeighborsKeyword_4() { return cNumberOfLiveNeighborsKeyword_4; }
@@ -153,8 +153,8 @@ public class LifeDslGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		public RuleCall getNumberOfLiveNeighborsINTTerminalRuleCall_5_0() { return cNumberOfLiveNeighborsINTTerminalRuleCall_5_0; }
 	}
 	
-	public class OperatorElements extends AbstractElementFinder.AbstractEnumRuleElementFinder {
-		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "game.of.life.LifeDsl.Operator");
+	public class OperatorUnitElements extends AbstractElementFinder.AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "game.of.life.LifeDsl.OperatorUnit");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final EnumLiteralDeclaration cEQEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
 		private final Keyword cEQEqualsSignEqualsSignKeyword_0_0 = (Keyword)cEQEnumLiteralDeclaration_0.eContents().get(0);
@@ -163,7 +163,7 @@ public class LifeDslGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final EnumLiteralDeclaration cGEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
 		private final Keyword cGGreaterThanSignKeyword_2_0 = (Keyword)cGEnumLiteralDeclaration_2.eContents().get(0);
 		
-		//enum Operator:
+		//enum OperatorUnit:
 		//    EQ = '==' |
 		//    L = '<' |
 		//    G = '>'
@@ -237,7 +237,7 @@ public class LifeDslGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	private final ModelElements pModel;
 	private final GridElements pGrid;
 	private final EvolutionRulesElements pEvolutionRules;
-	private final OperatorElements eOperator;
+	private final OperatorUnitElements eOperatorUnit;
 	private final DieAliveUnitElements eDieAliveUnit;
 	
 	private final Grammar grammar;
@@ -252,7 +252,7 @@ public class LifeDslGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		this.pModel = new ModelElements();
 		this.pGrid = new GridElements();
 		this.pEvolutionRules = new EvolutionRulesElements();
-		this.eOperator = new OperatorElements();
+		this.eOperatorUnit = new OperatorUnitElements();
 		this.eDieAliveUnit = new DieAliveUnitElements();
 	}
 	
@@ -309,7 +309,7 @@ public class LifeDslGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	
 	//EvolutionRules:
 	//    'Rule:' name = DieAliveUnit
-	//    'ComparisonOperator:' operator = Operator
+	//    'ComparisonOperator:' operator = OperatorUnit
 	//    'NumberOfLiveNeighbors:' numberOfLiveNeighbors = INT
 	//;
 	public EvolutionRulesElements getEvolutionRulesAccess() {
@@ -320,17 +320,17 @@ public class LifeDslGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		return getEvolutionRulesAccess().getRule();
 	}
 	
-	//enum Operator:
+	//enum OperatorUnit:
 	//    EQ = '==' |
 	//    L = '<' |
 	//    G = '>'
 	//;
-	public OperatorElements getOperatorAccess() {
-		return eOperator;
+	public OperatorUnitElements getOperatorUnitAccess() {
+		return eOperatorUnit;
 	}
 	
-	public EnumRule getOperatorRule() {
-		return getOperatorAccess().getRule();
+	public EnumRule getOperatorUnitRule() {
+		return getOperatorUnitAccess().getRule();
 	}
 	
 	//enum DieAliveUnit:

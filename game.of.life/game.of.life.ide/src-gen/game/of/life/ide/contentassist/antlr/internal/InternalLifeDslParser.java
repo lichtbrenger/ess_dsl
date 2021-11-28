@@ -312,32 +312,32 @@ public class InternalLifeDslParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "ruleEvolutionRules"
 
 
-    // $ANTLR start "ruleOperator"
-    // InternalLifeDsl.g:128:1: ruleOperator : ( ( rule__Operator__Alternatives ) ) ;
-    public final void ruleOperator() throws RecognitionException {
+    // $ANTLR start "ruleOperatorUnit"
+    // InternalLifeDsl.g:128:1: ruleOperatorUnit : ( ( rule__OperatorUnit__Alternatives ) ) ;
+    public final void ruleOperatorUnit() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLifeDsl.g:132:1: ( ( ( rule__Operator__Alternatives ) ) )
-            // InternalLifeDsl.g:133:2: ( ( rule__Operator__Alternatives ) )
+            // InternalLifeDsl.g:132:1: ( ( ( rule__OperatorUnit__Alternatives ) ) )
+            // InternalLifeDsl.g:133:2: ( ( rule__OperatorUnit__Alternatives ) )
             {
-            // InternalLifeDsl.g:133:2: ( ( rule__Operator__Alternatives ) )
-            // InternalLifeDsl.g:134:3: ( rule__Operator__Alternatives )
+            // InternalLifeDsl.g:133:2: ( ( rule__OperatorUnit__Alternatives ) )
+            // InternalLifeDsl.g:134:3: ( rule__OperatorUnit__Alternatives )
             {
-             before(grammarAccess.getOperatorAccess().getAlternatives()); 
-            // InternalLifeDsl.g:135:3: ( rule__Operator__Alternatives )
-            // InternalLifeDsl.g:135:4: rule__Operator__Alternatives
+             before(grammarAccess.getOperatorUnitAccess().getAlternatives()); 
+            // InternalLifeDsl.g:135:3: ( rule__OperatorUnit__Alternatives )
+            // InternalLifeDsl.g:135:4: rule__OperatorUnit__Alternatives
             {
             pushFollow(FOLLOW_2);
-            rule__Operator__Alternatives();
+            rule__OperatorUnit__Alternatives();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getOperatorAccess().getAlternatives()); 
+             after(grammarAccess.getOperatorUnitAccess().getAlternatives()); 
 
             }
 
@@ -356,7 +356,7 @@ public class InternalLifeDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "ruleOperator"
+    // $ANTLR end "ruleOperatorUnit"
 
 
     // $ANTLR start "ruleDieAliveUnit"
@@ -406,9 +406,9 @@ public class InternalLifeDslParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "ruleDieAliveUnit"
 
 
-    // $ANTLR start "rule__Operator__Alternatives"
-    // InternalLifeDsl.g:159:1: rule__Operator__Alternatives : ( ( ( '==' ) ) | ( ( '<' ) ) | ( ( '>' ) ) );
-    public final void rule__Operator__Alternatives() throws RecognitionException {
+    // $ANTLR start "rule__OperatorUnit__Alternatives"
+    // InternalLifeDsl.g:159:1: rule__OperatorUnit__Alternatives : ( ( ( '==' ) ) | ( ( '<' ) ) | ( ( '>' ) ) );
+    public final void rule__OperatorUnit__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -445,7 +445,7 @@ public class InternalLifeDslParser extends AbstractInternalContentAssistParser {
                     // InternalLifeDsl.g:164:2: ( ( '==' ) )
                     // InternalLifeDsl.g:165:3: ( '==' )
                     {
-                     before(grammarAccess.getOperatorAccess().getEQEnumLiteralDeclaration_0()); 
+                     before(grammarAccess.getOperatorUnitAccess().getEQEnumLiteralDeclaration_0()); 
                     // InternalLifeDsl.g:166:3: ( '==' )
                     // InternalLifeDsl.g:166:4: '=='
                     {
@@ -453,7 +453,7 @@ public class InternalLifeDslParser extends AbstractInternalContentAssistParser {
 
                     }
 
-                     after(grammarAccess.getOperatorAccess().getEQEnumLiteralDeclaration_0()); 
+                     after(grammarAccess.getOperatorUnitAccess().getEQEnumLiteralDeclaration_0()); 
 
                     }
 
@@ -466,7 +466,7 @@ public class InternalLifeDslParser extends AbstractInternalContentAssistParser {
                     // InternalLifeDsl.g:170:2: ( ( '<' ) )
                     // InternalLifeDsl.g:171:3: ( '<' )
                     {
-                     before(grammarAccess.getOperatorAccess().getLEnumLiteralDeclaration_1()); 
+                     before(grammarAccess.getOperatorUnitAccess().getLEnumLiteralDeclaration_1()); 
                     // InternalLifeDsl.g:172:3: ( '<' )
                     // InternalLifeDsl.g:172:4: '<'
                     {
@@ -474,7 +474,7 @@ public class InternalLifeDslParser extends AbstractInternalContentAssistParser {
 
                     }
 
-                     after(grammarAccess.getOperatorAccess().getLEnumLiteralDeclaration_1()); 
+                     after(grammarAccess.getOperatorUnitAccess().getLEnumLiteralDeclaration_1()); 
 
                     }
 
@@ -487,7 +487,7 @@ public class InternalLifeDslParser extends AbstractInternalContentAssistParser {
                     // InternalLifeDsl.g:176:2: ( ( '>' ) )
                     // InternalLifeDsl.g:177:3: ( '>' )
                     {
-                     before(grammarAccess.getOperatorAccess().getGEnumLiteralDeclaration_2()); 
+                     before(grammarAccess.getOperatorUnitAccess().getGEnumLiteralDeclaration_2()); 
                     // InternalLifeDsl.g:178:3: ( '>' )
                     // InternalLifeDsl.g:178:4: '>'
                     {
@@ -495,7 +495,7 @@ public class InternalLifeDslParser extends AbstractInternalContentAssistParser {
 
                     }
 
-                     after(grammarAccess.getOperatorAccess().getGEnumLiteralDeclaration_2()); 
+                     after(grammarAccess.getOperatorUnitAccess().getGEnumLiteralDeclaration_2()); 
 
                     }
 
@@ -516,7 +516,7 @@ public class InternalLifeDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Operator__Alternatives"
+    // $ANTLR end "rule__OperatorUnit__Alternatives"
 
 
     // $ANTLR start "rule__DieAliveUnit__Alternatives"
@@ -1971,25 +1971,25 @@ public class InternalLifeDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EvolutionRules__OperatorAssignment_3"
-    // InternalLifeDsl.g:666:1: rule__EvolutionRules__OperatorAssignment_3 : ( ruleOperator ) ;
+    // InternalLifeDsl.g:666:1: rule__EvolutionRules__OperatorAssignment_3 : ( ruleOperatorUnit ) ;
     public final void rule__EvolutionRules__OperatorAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLifeDsl.g:670:1: ( ( ruleOperator ) )
-            // InternalLifeDsl.g:671:2: ( ruleOperator )
+            // InternalLifeDsl.g:670:1: ( ( ruleOperatorUnit ) )
+            // InternalLifeDsl.g:671:2: ( ruleOperatorUnit )
             {
-            // InternalLifeDsl.g:671:2: ( ruleOperator )
-            // InternalLifeDsl.g:672:3: ruleOperator
+            // InternalLifeDsl.g:671:2: ( ruleOperatorUnit )
+            // InternalLifeDsl.g:672:3: ruleOperatorUnit
             {
-             before(grammarAccess.getEvolutionRulesAccess().getOperatorOperatorEnumRuleCall_3_0()); 
+             before(grammarAccess.getEvolutionRulesAccess().getOperatorOperatorUnitEnumRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
-            ruleOperator();
+            ruleOperatorUnit();
 
             state._fsp--;
 
-             after(grammarAccess.getEvolutionRulesAccess().getOperatorOperatorEnumRuleCall_3_0()); 
+             after(grammarAccess.getEvolutionRulesAccess().getOperatorOperatorUnitEnumRuleCall_3_0()); 
 
             }
 

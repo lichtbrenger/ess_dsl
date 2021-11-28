@@ -235,9 +235,9 @@ ruleEvolutionRules returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getEvolutionRulesAccess().getOperatorOperatorEnumRuleCall_3_0());
+					newCompositeNode(grammarAccess.getEvolutionRulesAccess().getOperatorOperatorUnitEnumRuleCall_3_0());
 				}
-				lv_operator_3_0=ruleOperator
+				lv_operator_3_0=ruleOperatorUnit
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getEvolutionRulesRule());
@@ -246,7 +246,7 @@ ruleEvolutionRules returns [EObject current=null]
 						$current,
 						"operator",
 						lv_operator_3_0,
-						"game.of.life.LifeDsl.Operator");
+						"game.of.life.LifeDsl.OperatorUnit");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -276,8 +276,8 @@ ruleEvolutionRules returns [EObject current=null]
 	)
 ;
 
-// Rule Operator
-ruleOperator returns [Enumerator current=null]
+// Rule OperatorUnit
+ruleOperatorUnit returns [Enumerator current=null]
 @init {
 	enterRule();
 }
@@ -288,24 +288,24 @@ ruleOperator returns [Enumerator current=null]
 		(
 			enumLiteral_0='=='
 			{
-				$current = grammarAccess.getOperatorAccess().getEQEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_0, grammarAccess.getOperatorAccess().getEQEnumLiteralDeclaration_0());
+				$current = grammarAccess.getOperatorUnitAccess().getEQEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_0, grammarAccess.getOperatorUnitAccess().getEQEnumLiteralDeclaration_0());
 			}
 		)
 		    |
 		(
 			enumLiteral_1='<'
 			{
-				$current = grammarAccess.getOperatorAccess().getLEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_1, grammarAccess.getOperatorAccess().getLEnumLiteralDeclaration_1());
+				$current = grammarAccess.getOperatorUnitAccess().getLEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_1, grammarAccess.getOperatorUnitAccess().getLEnumLiteralDeclaration_1());
 			}
 		)
 		    |
 		(
 			enumLiteral_2='>'
 			{
-				$current = grammarAccess.getOperatorAccess().getGEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_2, grammarAccess.getOperatorAccess().getGEnumLiteralDeclaration_2());
+				$current = grammarAccess.getOperatorUnitAccess().getGEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_2, grammarAccess.getOperatorUnitAccess().getGEnumLiteralDeclaration_2());
 			}
 		)
 	)

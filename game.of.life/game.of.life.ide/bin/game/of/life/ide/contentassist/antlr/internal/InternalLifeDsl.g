@@ -124,16 +124,16 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-// Rule Operator
-ruleOperator
+// Rule OperatorUnit
+ruleOperatorUnit
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getOperatorAccess().getAlternatives()); }
-		(rule__Operator__Alternatives)
-		{ after(grammarAccess.getOperatorAccess().getAlternatives()); }
+		{ before(grammarAccess.getOperatorUnitAccess().getAlternatives()); }
+		(rule__OperatorUnit__Alternatives)
+		{ after(grammarAccess.getOperatorUnitAccess().getAlternatives()); }
 	)
 ;
 finally {
@@ -156,27 +156,27 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Operator__Alternatives
+rule__OperatorUnit__Alternatives
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getOperatorAccess().getEQEnumLiteralDeclaration_0()); }
+		{ before(grammarAccess.getOperatorUnitAccess().getEQEnumLiteralDeclaration_0()); }
 		('==')
-		{ after(grammarAccess.getOperatorAccess().getEQEnumLiteralDeclaration_0()); }
+		{ after(grammarAccess.getOperatorUnitAccess().getEQEnumLiteralDeclaration_0()); }
 	)
 	|
 	(
-		{ before(grammarAccess.getOperatorAccess().getLEnumLiteralDeclaration_1()); }
+		{ before(grammarAccess.getOperatorUnitAccess().getLEnumLiteralDeclaration_1()); }
 		('<')
-		{ after(grammarAccess.getOperatorAccess().getLEnumLiteralDeclaration_1()); }
+		{ after(grammarAccess.getOperatorUnitAccess().getLEnumLiteralDeclaration_1()); }
 	)
 	|
 	(
-		{ before(grammarAccess.getOperatorAccess().getGEnumLiteralDeclaration_2()); }
+		{ before(grammarAccess.getOperatorUnitAccess().getGEnumLiteralDeclaration_2()); }
 		('>')
-		{ after(grammarAccess.getOperatorAccess().getGEnumLiteralDeclaration_2()); }
+		{ after(grammarAccess.getOperatorUnitAccess().getGEnumLiteralDeclaration_2()); }
 	)
 ;
 finally {
@@ -669,9 +669,9 @@ rule__EvolutionRules__OperatorAssignment_3
 	}
 :
 	(
-		{ before(grammarAccess.getEvolutionRulesAccess().getOperatorOperatorEnumRuleCall_3_0()); }
-		ruleOperator
-		{ after(grammarAccess.getEvolutionRulesAccess().getOperatorOperatorEnumRuleCall_3_0()); }
+		{ before(grammarAccess.getEvolutionRulesAccess().getOperatorOperatorUnitEnumRuleCall_3_0()); }
+		ruleOperatorUnit
+		{ after(grammarAccess.getEvolutionRulesAccess().getOperatorOperatorUnitEnumRuleCall_3_0()); }
 	)
 ;
 finally {

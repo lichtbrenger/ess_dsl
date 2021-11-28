@@ -53,7 +53,7 @@ public class LifeDslSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     EvolutionRules returns EvolutionRules
 	 *
 	 * Constraint:
-	 *     (name=DieAliveUnit operator=Operator numberOfLiveNeighbors=INT)
+	 *     (name=DieAliveUnit operator=OperatorUnit numberOfLiveNeighbors=INT)
 	 */
 	protected void sequence_EvolutionRules(ISerializationContext context, EvolutionRules semanticObject) {
 		if (errorAcceptor != null) {
@@ -66,7 +66,7 @@ public class LifeDslSemanticSequencer extends AbstractDelegatingSemanticSequence
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getEvolutionRulesAccess().getNameDieAliveUnitEnumRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getEvolutionRulesAccess().getOperatorOperatorEnumRuleCall_3_0(), semanticObject.getOperator());
+		feeder.accept(grammarAccess.getEvolutionRulesAccess().getOperatorOperatorUnitEnumRuleCall_3_0(), semanticObject.getOperator());
 		feeder.accept(grammarAccess.getEvolutionRulesAccess().getNumberOfLiveNeighborsINTTerminalRuleCall_5_0(), semanticObject.getNumberOfLiveNeighbors());
 		feeder.finish();
 	}

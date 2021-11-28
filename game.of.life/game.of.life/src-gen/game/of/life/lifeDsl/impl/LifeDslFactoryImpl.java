@@ -84,8 +84,8 @@ public class LifeDslFactoryImpl extends EFactoryImpl implements LifeDslFactory
   {
     switch (eDataType.getClassifierID())
     {
-      case LifeDslPackage.OPERATOR:
-        return createOperatorFromString(eDataType, initialValue);
+      case LifeDslPackage.OPERATOR_UNIT:
+        return createOperatorUnitFromString(eDataType, initialValue);
       case LifeDslPackage.DIE_ALIVE_UNIT:
         return createDieAliveUnitFromString(eDataType, initialValue);
       default:
@@ -103,8 +103,8 @@ public class LifeDslFactoryImpl extends EFactoryImpl implements LifeDslFactory
   {
     switch (eDataType.getClassifierID())
     {
-      case LifeDslPackage.OPERATOR:
-        return convertOperatorToString(eDataType, instanceValue);
+      case LifeDslPackage.OPERATOR_UNIT:
+        return convertOperatorUnitToString(eDataType, instanceValue);
       case LifeDslPackage.DIE_ALIVE_UNIT:
         return convertDieAliveUnitToString(eDataType, instanceValue);
       default:
@@ -153,9 +153,9 @@ public class LifeDslFactoryImpl extends EFactoryImpl implements LifeDslFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Operator createOperatorFromString(EDataType eDataType, String initialValue)
+  public OperatorUnit createOperatorUnitFromString(EDataType eDataType, String initialValue)
   {
-    Operator result = Operator.get(initialValue);
+    OperatorUnit result = OperatorUnit.get(initialValue);
     if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
     return result;
   }
@@ -165,7 +165,7 @@ public class LifeDslFactoryImpl extends EFactoryImpl implements LifeDslFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public String convertOperatorToString(EDataType eDataType, Object instanceValue)
+  public String convertOperatorUnitToString(EDataType eDataType, Object instanceValue)
   {
     return instanceValue == null ? null : instanceValue.toString();
   }

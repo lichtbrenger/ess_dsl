@@ -8,7 +8,7 @@ import game.of.life.lifeDsl.DieAliveUnit;
 import game.of.life.lifeDsl.EvolutionRules;
 import game.of.life.lifeDsl.Grid;
 import game.of.life.lifeDsl.Model;
-import game.of.life.lifeDsl.Operator;
+import game.of.life.lifeDsl.OperatorUnit;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtext.validation.Check;
 
@@ -39,7 +39,7 @@ public class LifeDslValidator extends AbstractLifeDslValidator {
         switch (_name) {
           case DIE:
             if (((rules.getNumberOfLiveNeighbors() == 3) && 
-              (Objects.equal(rules.getOperator(), Operator.L) || Objects.equal(rules.getOperator(), Operator.EQ)))) {
+              (Objects.equal(rules.getOperator(), OperatorUnit.L) || Objects.equal(rules.getOperator(), OperatorUnit.EQ)))) {
               this.error("Neighbors less than or equal to 3 not\r\n                                allowed to die", null);
             }
             break;

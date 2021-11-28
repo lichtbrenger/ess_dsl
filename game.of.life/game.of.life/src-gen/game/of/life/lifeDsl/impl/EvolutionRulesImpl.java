@@ -6,7 +6,7 @@ package game.of.life.lifeDsl.impl;
 import game.of.life.lifeDsl.DieAliveUnit;
 import game.of.life.lifeDsl.EvolutionRules;
 import game.of.life.lifeDsl.LifeDslPackage;
-import game.of.life.lifeDsl.Operator;
+import game.of.life.lifeDsl.OperatorUnit;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -60,7 +60,7 @@ public class EvolutionRulesImpl extends MinimalEObjectImpl.Container implements 
    * @generated
    * @ordered
    */
-  protected static final Operator OPERATOR_EDEFAULT = Operator.EQ;
+  protected static final OperatorUnit OPERATOR_EDEFAULT = OperatorUnit.EQ;
 
   /**
    * The cached value of the '{@link #getOperator() <em>Operator</em>}' attribute.
@@ -70,7 +70,7 @@ public class EvolutionRulesImpl extends MinimalEObjectImpl.Container implements 
    * @generated
    * @ordered
    */
-  protected Operator operator = OPERATOR_EDEFAULT;
+  protected OperatorUnit operator = OPERATOR_EDEFAULT;
 
   /**
    * The default value of the '{@link #getNumberOfLiveNeighbors() <em>Number Of Live Neighbors</em>}' attribute.
@@ -144,7 +144,7 @@ public class EvolutionRulesImpl extends MinimalEObjectImpl.Container implements 
    * @generated
    */
   @Override
-  public Operator getOperator()
+  public OperatorUnit getOperator()
   {
     return operator;
   }
@@ -155,9 +155,9 @@ public class EvolutionRulesImpl extends MinimalEObjectImpl.Container implements 
    * @generated
    */
   @Override
-  public void setOperator(Operator newOperator)
+  public void setOperator(OperatorUnit newOperator)
   {
-    Operator oldOperator = operator;
+    OperatorUnit oldOperator = operator;
     operator = newOperator == null ? OPERATOR_EDEFAULT : newOperator;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, LifeDslPackage.EVOLUTION_RULES__OPERATOR, oldOperator, operator));
@@ -222,7 +222,7 @@ public class EvolutionRulesImpl extends MinimalEObjectImpl.Container implements 
         setName((DieAliveUnit)newValue);
         return;
       case LifeDslPackage.EVOLUTION_RULES__OPERATOR:
-        setOperator((Operator)newValue);
+        setOperator((OperatorUnit)newValue);
         return;
       case LifeDslPackage.EVOLUTION_RULES__NUMBER_OF_LIVE_NEIGHBORS:
         setNumberOfLiveNeighbors((Integer)newValue);

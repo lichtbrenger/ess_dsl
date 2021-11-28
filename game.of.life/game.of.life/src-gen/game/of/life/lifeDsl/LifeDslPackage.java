@@ -179,14 +179,14 @@ public interface LifeDslPackage extends EPackage
   int EVOLUTION_RULES_FEATURE_COUNT = 3;
 
   /**
-   * The meta object id for the '{@link game.of.life.lifeDsl.Operator <em>Operator</em>}' enum.
+   * The meta object id for the '{@link game.of.life.lifeDsl.OperatorUnit <em>Operator Unit</em>}' enum.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see game.of.life.lifeDsl.Operator
-   * @see game.of.life.lifeDsl.impl.LifeDslPackageImpl#getOperator()
+   * @see game.of.life.lifeDsl.OperatorUnit
+   * @see game.of.life.lifeDsl.impl.LifeDslPackageImpl#getOperatorUnit()
    * @generated
    */
-  int OPERATOR = 3;
+  int OPERATOR_UNIT = 3;
 
   /**
    * The meta object id for the '{@link game.of.life.lifeDsl.DieAliveUnit <em>Die Alive Unit</em>}' enum.
@@ -307,14 +307,14 @@ public interface LifeDslPackage extends EPackage
   EAttribute getEvolutionRules_NumberOfLiveNeighbors();
 
   /**
-   * Returns the meta object for enum '{@link game.of.life.lifeDsl.Operator <em>Operator</em>}'.
+   * Returns the meta object for enum '{@link game.of.life.lifeDsl.OperatorUnit <em>Operator Unit</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for enum '<em>Operator</em>'.
-   * @see game.of.life.lifeDsl.Operator
+   * @return the meta object for enum '<em>Operator Unit</em>'.
+   * @see game.of.life.lifeDsl.OperatorUnit
    * @generated
    */
-  EEnum getOperator();
+  EEnum getOperatorUnit();
 
   /**
    * Returns the meta object for enum '{@link game.of.life.lifeDsl.DieAliveUnit <em>Die Alive Unit</em>}'.
@@ -436,14 +436,14 @@ public interface LifeDslPackage extends EPackage
     EAttribute EVOLUTION_RULES__NUMBER_OF_LIVE_NEIGHBORS = eINSTANCE.getEvolutionRules_NumberOfLiveNeighbors();
 
     /**
-     * The meta object literal for the '{@link game.of.life.lifeDsl.Operator <em>Operator</em>}' enum.
+     * The meta object literal for the '{@link game.of.life.lifeDsl.OperatorUnit <em>Operator Unit</em>}' enum.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see game.of.life.lifeDsl.Operator
-     * @see game.of.life.lifeDsl.impl.LifeDslPackageImpl#getOperator()
+     * @see game.of.life.lifeDsl.OperatorUnit
+     * @see game.of.life.lifeDsl.impl.LifeDslPackageImpl#getOperatorUnit()
      * @generated
      */
-    EEnum OPERATOR = eINSTANCE.getOperator();
+    EEnum OPERATOR_UNIT = eINSTANCE.getOperatorUnit();
 
     /**
      * The meta object literal for the '{@link game.of.life.lifeDsl.DieAliveUnit <em>Die Alive Unit</em>}' enum.

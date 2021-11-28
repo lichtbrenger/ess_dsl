@@ -446,7 +446,7 @@ public class InternalLifeDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEvolutionRules"
-    // InternalLifeDsl.g:200:1: ruleEvolutionRules returns [EObject current=null] : (otherlv_0= 'Rule:' ( (lv_name_1_0= ruleDieAliveUnit ) ) otherlv_2= 'ComparisonOperator:' ( (lv_operator_3_0= ruleOperator ) ) otherlv_4= 'NumberOfLiveNeighbors:' ( (lv_numberOfLiveNeighbors_5_0= RULE_INT ) ) ) ;
+    // InternalLifeDsl.g:200:1: ruleEvolutionRules returns [EObject current=null] : (otherlv_0= 'Rule:' ( (lv_name_1_0= ruleDieAliveUnit ) ) otherlv_2= 'ComparisonOperator:' ( (lv_operator_3_0= ruleOperatorUnit ) ) otherlv_4= 'NumberOfLiveNeighbors:' ( (lv_numberOfLiveNeighbors_5_0= RULE_INT ) ) ) ;
     public final EObject ruleEvolutionRules() throws RecognitionException {
         EObject current = null;
 
@@ -463,11 +463,11 @@ public class InternalLifeDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLifeDsl.g:206:2: ( (otherlv_0= 'Rule:' ( (lv_name_1_0= ruleDieAliveUnit ) ) otherlv_2= 'ComparisonOperator:' ( (lv_operator_3_0= ruleOperator ) ) otherlv_4= 'NumberOfLiveNeighbors:' ( (lv_numberOfLiveNeighbors_5_0= RULE_INT ) ) ) )
-            // InternalLifeDsl.g:207:2: (otherlv_0= 'Rule:' ( (lv_name_1_0= ruleDieAliveUnit ) ) otherlv_2= 'ComparisonOperator:' ( (lv_operator_3_0= ruleOperator ) ) otherlv_4= 'NumberOfLiveNeighbors:' ( (lv_numberOfLiveNeighbors_5_0= RULE_INT ) ) )
+            // InternalLifeDsl.g:206:2: ( (otherlv_0= 'Rule:' ( (lv_name_1_0= ruleDieAliveUnit ) ) otherlv_2= 'ComparisonOperator:' ( (lv_operator_3_0= ruleOperatorUnit ) ) otherlv_4= 'NumberOfLiveNeighbors:' ( (lv_numberOfLiveNeighbors_5_0= RULE_INT ) ) ) )
+            // InternalLifeDsl.g:207:2: (otherlv_0= 'Rule:' ( (lv_name_1_0= ruleDieAliveUnit ) ) otherlv_2= 'ComparisonOperator:' ( (lv_operator_3_0= ruleOperatorUnit ) ) otherlv_4= 'NumberOfLiveNeighbors:' ( (lv_numberOfLiveNeighbors_5_0= RULE_INT ) ) )
             {
-            // InternalLifeDsl.g:207:2: (otherlv_0= 'Rule:' ( (lv_name_1_0= ruleDieAliveUnit ) ) otherlv_2= 'ComparisonOperator:' ( (lv_operator_3_0= ruleOperator ) ) otherlv_4= 'NumberOfLiveNeighbors:' ( (lv_numberOfLiveNeighbors_5_0= RULE_INT ) ) )
-            // InternalLifeDsl.g:208:3: otherlv_0= 'Rule:' ( (lv_name_1_0= ruleDieAliveUnit ) ) otherlv_2= 'ComparisonOperator:' ( (lv_operator_3_0= ruleOperator ) ) otherlv_4= 'NumberOfLiveNeighbors:' ( (lv_numberOfLiveNeighbors_5_0= RULE_INT ) )
+            // InternalLifeDsl.g:207:2: (otherlv_0= 'Rule:' ( (lv_name_1_0= ruleDieAliveUnit ) ) otherlv_2= 'ComparisonOperator:' ( (lv_operator_3_0= ruleOperatorUnit ) ) otherlv_4= 'NumberOfLiveNeighbors:' ( (lv_numberOfLiveNeighbors_5_0= RULE_INT ) ) )
+            // InternalLifeDsl.g:208:3: otherlv_0= 'Rule:' ( (lv_name_1_0= ruleDieAliveUnit ) ) otherlv_2= 'ComparisonOperator:' ( (lv_operator_3_0= ruleOperatorUnit ) ) otherlv_4= 'NumberOfLiveNeighbors:' ( (lv_numberOfLiveNeighbors_5_0= RULE_INT ) )
             {
             otherlv_0=(Token)match(input,15,FOLLOW_7); 
 
@@ -508,17 +508,17 @@ public class InternalLifeDslParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_2, grammarAccess.getEvolutionRulesAccess().getComparisonOperatorKeyword_2());
             		
-            // InternalLifeDsl.g:235:3: ( (lv_operator_3_0= ruleOperator ) )
-            // InternalLifeDsl.g:236:4: (lv_operator_3_0= ruleOperator )
+            // InternalLifeDsl.g:235:3: ( (lv_operator_3_0= ruleOperatorUnit ) )
+            // InternalLifeDsl.g:236:4: (lv_operator_3_0= ruleOperatorUnit )
             {
-            // InternalLifeDsl.g:236:4: (lv_operator_3_0= ruleOperator )
-            // InternalLifeDsl.g:237:5: lv_operator_3_0= ruleOperator
+            // InternalLifeDsl.g:236:4: (lv_operator_3_0= ruleOperatorUnit )
+            // InternalLifeDsl.g:237:5: lv_operator_3_0= ruleOperatorUnit
             {
 
-            					newCompositeNode(grammarAccess.getEvolutionRulesAccess().getOperatorOperatorEnumRuleCall_3_0());
+            					newCompositeNode(grammarAccess.getEvolutionRulesAccess().getOperatorOperatorUnitEnumRuleCall_3_0());
             				
             pushFollow(FOLLOW_10);
-            lv_operator_3_0=ruleOperator();
+            lv_operator_3_0=ruleOperatorUnit();
 
             state._fsp--;
 
@@ -530,7 +530,7 @@ public class InternalLifeDslParser extends AbstractInternalAntlrParser {
             						current,
             						"operator",
             						lv_operator_3_0,
-            						"game.of.life.LifeDsl.Operator");
+            						"game.of.life.LifeDsl.OperatorUnit");
             					afterParserOrEnumRuleCall();
             				
 
@@ -591,9 +591,9 @@ public class InternalLifeDslParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleEvolutionRules"
 
 
-    // $ANTLR start "ruleOperator"
-    // InternalLifeDsl.g:280:1: ruleOperator returns [Enumerator current=null] : ( (enumLiteral_0= '==' ) | (enumLiteral_1= '<' ) | (enumLiteral_2= '>' ) ) ;
-    public final Enumerator ruleOperator() throws RecognitionException {
+    // $ANTLR start "ruleOperatorUnit"
+    // InternalLifeDsl.g:280:1: ruleOperatorUnit returns [Enumerator current=null] : ( (enumLiteral_0= '==' ) | (enumLiteral_1= '<' ) | (enumLiteral_2= '>' ) ) ;
+    public final Enumerator ruleOperatorUnit() throws RecognitionException {
         Enumerator current = null;
 
         Token enumLiteral_0=null;
@@ -641,8 +641,8 @@ public class InternalLifeDslParser extends AbstractInternalAntlrParser {
                     {
                     enumLiteral_0=(Token)match(input,18,FOLLOW_2); 
 
-                    				current = grammarAccess.getOperatorAccess().getEQEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
-                    				newLeafNode(enumLiteral_0, grammarAccess.getOperatorAccess().getEQEnumLiteralDeclaration_0());
+                    				current = grammarAccess.getOperatorUnitAccess().getEQEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_0, grammarAccess.getOperatorUnitAccess().getEQEnumLiteralDeclaration_0());
                     			
 
                     }
@@ -658,8 +658,8 @@ public class InternalLifeDslParser extends AbstractInternalAntlrParser {
                     {
                     enumLiteral_1=(Token)match(input,19,FOLLOW_2); 
 
-                    				current = grammarAccess.getOperatorAccess().getLEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-                    				newLeafNode(enumLiteral_1, grammarAccess.getOperatorAccess().getLEnumLiteralDeclaration_1());
+                    				current = grammarAccess.getOperatorUnitAccess().getLEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_1, grammarAccess.getOperatorUnitAccess().getLEnumLiteralDeclaration_1());
                     			
 
                     }
@@ -675,8 +675,8 @@ public class InternalLifeDslParser extends AbstractInternalAntlrParser {
                     {
                     enumLiteral_2=(Token)match(input,20,FOLLOW_2); 
 
-                    				current = grammarAccess.getOperatorAccess().getGEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
-                    				newLeafNode(enumLiteral_2, grammarAccess.getOperatorAccess().getGEnumLiteralDeclaration_2());
+                    				current = grammarAccess.getOperatorUnitAccess().getGEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_2, grammarAccess.getOperatorUnitAccess().getGEnumLiteralDeclaration_2());
                     			
 
                     }
@@ -703,7 +703,7 @@ public class InternalLifeDslParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleOperator"
+    // $ANTLR end "ruleOperatorUnit"
 
 
     // $ANTLR start "ruleDieAliveUnit"

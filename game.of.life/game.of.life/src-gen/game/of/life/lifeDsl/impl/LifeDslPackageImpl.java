@@ -9,7 +9,7 @@ import game.of.life.lifeDsl.Grid;
 import game.of.life.lifeDsl.LifeDslFactory;
 import game.of.life.lifeDsl.LifeDslPackage;
 import game.of.life.lifeDsl.Model;
-import game.of.life.lifeDsl.Operator;
+import game.of.life.lifeDsl.OperatorUnit;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -53,7 +53,7 @@ public class LifeDslPackageImpl extends EPackageImpl implements LifeDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EEnum operatorEEnum = null;
+  private EEnum operatorUnitEEnum = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -241,9 +241,9 @@ public class LifeDslPackageImpl extends EPackageImpl implements LifeDslPackage
    * @generated
    */
   @Override
-  public EEnum getOperator()
+  public EEnum getOperatorUnit()
   {
-    return operatorEEnum;
+    return operatorUnitEEnum;
   }
 
   /**
@@ -302,7 +302,7 @@ public class LifeDslPackageImpl extends EPackageImpl implements LifeDslPackage
     createEAttribute(evolutionRulesEClass, EVOLUTION_RULES__NUMBER_OF_LIVE_NEIGHBORS);
 
     // Create enums
-    operatorEEnum = createEEnum(OPERATOR);
+    operatorUnitEEnum = createEEnum(OPERATOR_UNIT);
     dieAliveUnitEEnum = createEEnum(DIE_ALIVE_UNIT);
   }
 
@@ -347,14 +347,14 @@ public class LifeDslPackageImpl extends EPackageImpl implements LifeDslPackage
 
     initEClass(evolutionRulesEClass, EvolutionRules.class, "EvolutionRules", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getEvolutionRules_Name(), this.getDieAliveUnit(), "name", null, 0, 1, EvolutionRules.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getEvolutionRules_Operator(), this.getOperator(), "operator", null, 0, 1, EvolutionRules.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEvolutionRules_Operator(), this.getOperatorUnit(), "operator", null, 0, 1, EvolutionRules.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getEvolutionRules_NumberOfLiveNeighbors(), ecorePackage.getEInt(), "numberOfLiveNeighbors", null, 0, 1, EvolutionRules.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Initialize enums and add enum literals
-    initEEnum(operatorEEnum, Operator.class, "Operator");
-    addEEnumLiteral(operatorEEnum, Operator.EQ);
-    addEEnumLiteral(operatorEEnum, Operator.L);
-    addEEnumLiteral(operatorEEnum, Operator.G);
+    initEEnum(operatorUnitEEnum, OperatorUnit.class, "OperatorUnit");
+    addEEnumLiteral(operatorUnitEEnum, OperatorUnit.EQ);
+    addEEnumLiteral(operatorUnitEEnum, OperatorUnit.L);
+    addEEnumLiteral(operatorUnitEEnum, OperatorUnit.G);
 
     initEEnum(dieAliveUnitEEnum, DieAliveUnit.class, "DieAliveUnit");
     addEEnumLiteral(dieAliveUnitEEnum, DieAliveUnit.DIE);

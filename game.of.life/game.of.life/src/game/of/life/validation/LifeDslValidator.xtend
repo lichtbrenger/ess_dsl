@@ -5,10 +5,10 @@ package game.of.life.validation
 
 import game.of.life.lifeDsl.DieAliveUnit
 import game.of.life.lifeDsl.EvolutionRules
-import game.of.life.lifeDsl.Model
-import game.of.life.lifeDsl.Operator
-import org.eclipse.xtext.validation.Check
 import game.of.life.lifeDsl.Grid
+import game.of.life.lifeDsl.Model
+import game.of.life.lifeDsl.OperatorUnit
+import org.eclipse.xtext.validation.Check
 
 /**
  * This class contains custom validation rules. 
@@ -40,8 +40,8 @@ class LifeDslValidator extends AbstractLifeDslValidator {
                     	if (
                     		rules.numberOfLiveNeighbors == 3 
                     		&& (
-                    			rules.operator == Operator::L 
-                    			|| rules.operator == Operator::EQ
+                    			rules.operator == OperatorUnit::L 
+                    			|| rules.operator == OperatorUnit::EQ
                     		)
                     	) {
                     		error("Neighbors less than or equal to 3 not

@@ -31,7 +31,7 @@ public class LifeDslParser extends AbstractContentAssistParser {
 		}
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, LifeDslGrammarAccess grammarAccess) {
-			builder.put(grammarAccess.getOperatorAccess().getAlternatives(), "rule__Operator__Alternatives");
+			builder.put(grammarAccess.getOperatorUnitAccess().getAlternatives(), "rule__OperatorUnit__Alternatives");
 			builder.put(grammarAccess.getDieAliveUnitAccess().getAlternatives(), "rule__DieAliveUnit__Alternatives");
 			builder.put(grammarAccess.getModelAccess().getGroup(), "rule__Model__Group__0");
 			builder.put(grammarAccess.getGridAccess().getGroup(), "rule__Grid__Group__0");

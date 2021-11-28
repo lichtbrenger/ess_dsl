@@ -52,28 +52,28 @@ public interface EvolutionRules extends EObject
 
   /**
    * Returns the value of the '<em><b>Operator</b></em>' attribute.
-   * The literals are from the enumeration {@link game.of.life.lifeDsl.Operator}.
+   * The literals are from the enumeration {@link game.of.life.lifeDsl.OperatorUnit}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Operator</em>' attribute.
-   * @see game.of.life.lifeDsl.Operator
-   * @see #setOperator(Operator)
+   * @see game.of.life.lifeDsl.OperatorUnit
+   * @see #setOperator(OperatorUnit)
    * @see game.of.life.lifeDsl.LifeDslPackage#getEvolutionRules_Operator()
    * @model
    * @generated
    */
-  Operator getOperator();
+  OperatorUnit getOperator();
 
   /**
    * Sets the value of the '{@link game.of.life.lifeDsl.EvolutionRules#getOperator <em>Operator</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Operator</em>' attribute.
-   * @see game.of.life.lifeDsl.Operator
+   * @see game.of.life.lifeDsl.OperatorUnit
    * @see #getOperator()
    * @generated
    */
-  void setOperator(Operator value);
+  void setOperator(OperatorUnit value);
 
   /**
    * Returns the value of the '<em><b>Number Of Live Neighbors</b></em>' attribute.

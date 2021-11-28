@@ -14,11 +14,11 @@ Grid:
 
 EvolutionRules:
 	'Rule:' name = DieAliveUnit
-	'ComparisonOperator:' operator = Operator
+	'ComparisonOperator:' operator = OperatorUnit
 	'NumberOfLiveNeighbors:' numberOfLiveNeighbors = INT
 ;
 
-enum Operator:
+enum OperatorUnit:
 	EQ = '==' |
 	L = '<' |
 	G = '>'

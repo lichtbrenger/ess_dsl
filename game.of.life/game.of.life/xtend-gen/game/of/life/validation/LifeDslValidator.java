@@ -52,7 +52,7 @@ public class LifeDslValidator extends AbstractLifeDslValidator {
             int _numberOfLiveNeighbors = rules.getNumberOfLiveNeighbors();
             boolean _notEquals = (_numberOfLiveNeighbors != 3);
             if (_notEquals) {
-              this.error("Neighbors should exactly match 3 \r\n\t\t\t\t\t\t\t\tto become alive", null);
+              this.info("Maybe rewrite to live or die", null);
             }
             break;
           default:

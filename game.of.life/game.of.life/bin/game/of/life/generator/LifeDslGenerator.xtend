@@ -22,10 +22,5 @@ class LifeDslGenerator extends AbstractGenerator {
 			 var path = "GameOfLife/" + resource.getURI().lastSegment + "/"
 			 fsa.generateFile(path+"RulesOfLife.java",JavaGenerator.toJava(root))
 		 }
-//		fsa.generateFile('greetings.txt', 'People to greet: ' + 
-//			resource.allContents
-//				.filter(Greeting)
-//				.map[name]
-//				.join(', '))
 	}
 }

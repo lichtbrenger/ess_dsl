@@ -53,8 +53,7 @@ class LifeDslValidator extends AbstractLifeDslValidator {
                         }
                     case DieAliveUnit::BECOME_ALIVE:
                         if (rules.numberOfLiveNeighbors != 3) {
-                            error("Neighbors should exactly match 3 
-								to become alive", null)
+                            info("Maybe rewrite to live or die", null)
                         }
 				}
 			}

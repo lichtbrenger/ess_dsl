@@ -8,6 +8,7 @@ import game.of.life.lifeDsl.EvolutionRules
 import game.of.life.lifeDsl.Model
 import game.of.life.lifeDsl.Operator
 import org.eclipse.xtext.validation.Check
+import game.of.life.lifeDsl.Grid
 
 /**
  * This class contains custom validation rules. 
@@ -73,5 +74,19 @@ class LifeDslValidator extends AbstractLifeDslValidator {
 	                }
 	            }
 	        }
+	}
+	
+	@Check
+	def checkGrid(Grid grid) {
+		if(grid.row < 0 || grid.column < 0){
+			error("Cell location can not be below 0",null)
+		}
+	}
+	
+	@Check
+	def checkNeighbours(EvolutionRules rules) {
+		if(rules.numberOfLiveNeighbors > 8) {
+			error("It is not possible to have more than 8 live neighbors",null)	
+		}
 	}
 }

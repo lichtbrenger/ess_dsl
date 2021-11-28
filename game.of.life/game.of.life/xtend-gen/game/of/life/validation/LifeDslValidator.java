@@ -40,12 +40,12 @@ public class LifeDslValidator extends AbstractLifeDslValidator {
           case DIE:
             if (((rules.getNumberOfLiveNeighbors() == 3) && 
               (Objects.equal(rules.getOperator(), Operator.L) || Objects.equal(rules.getOperator(), Operator.EQ)))) {
-              this.error("Neighbors less than or equal to 3 not\r\n                                allowed to die", null);
+              this.error("Neighbors less than or equal to 3 not\n                                allowed to die", null);
             }
             break;
           case LIVE:
             if (((rules.getNumberOfLiveNeighbors() != 2) && (rules.getNumberOfLiveNeighbors() != 3))) {
-              this.error("Neighbors less than 2 and more than 3 not\r\n                                allowed to live", null);
+              this.error("Neighbors less than 2 and more than 3 not\n                                allowed to live", null);
             }
             break;
           case BECOME_ALIVE:
@@ -71,6 +71,22 @@ public class LifeDslValidator extends AbstractLifeDslValidator {
           this.error("Double rule", null);
         }
       }
+    }
+  }
+  
+  @Check
+  public void checkGrid(final Grid grid) {
+    if (((grid.getRow() < 0) || (grid.getColumn() < 0))) {
+      this.error("Cell location can not be below 0", null);
+    }
+  }
+  
+  @Check
+  public void checkNeighbours(final EvolutionRules rules) {
+    int _numberOfLiveNeighbors = rules.getNumberOfLiveNeighbors();
+    boolean _greaterThan = (_numberOfLiveNeighbors > 8);
+    if (_greaterThan) {
+      this.error("It is not possible to have more than 8 live neighbors", null);
     }
   }
 }

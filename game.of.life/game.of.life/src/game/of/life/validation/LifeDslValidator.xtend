@@ -44,12 +44,12 @@ class LifeDslValidator extends AbstractLifeDslValidator {
                     			|| rules.operator == OperatorUnit::EQ
                     		)
                     	) {
-                    		error("Neighbors less than or equal to 3 not
+                    		warning("Neighbors less than or equal to 3 not
                                 allowed to die", null)
                     	}
                     case DieAliveUnit::LIVE:
                         if (rules.numberOfLiveNeighbors != 2 && rules.numberOfLiveNeighbors != 3) {
-                            error("Neighbors less than 2 and more than 3 not
+                            warning("Neighbors less than 2 and more than 3 not
                                 allowed to live", null)
                         }
                     case DieAliveUnit::BECOME_ALIVE:
@@ -62,18 +62,18 @@ class LifeDslValidator extends AbstractLifeDslValidator {
 	
 	@Check
     def checkEvolutionRules(Model root) {
-            var rlist = root.rules // lists start at position 0
-            for (var i = 0; i < rlist.size; i++) {
-	            for (var j = i + 1; j < rlist.size; j++) {
-	                if (
-	                	rlist.get(i).name.equals(rlist.get(j).name) 
-	                	&& rlist.get(i).operator.equals(rlist.get(j).operator)
-	                	&& rlist.get(i).numberOfLiveNeighbors.equals(rlist.get(j).numberOfLiveNeighbors)
-	                ) {
-	                    error("Double rule", null)
-	                }
-	            }
-	        }
+        var rlist = root.rules // lists start at position 0
+        for (var i = 0; i < rlist.size; i++) {
+            for (var j = i + 1; j < rlist.size; j++) {
+                if (
+                	rlist.get(i).name.equals(rlist.get(j).name) 
+                	&& rlist.get(i).operator.equals(rlist.get(j).operator)
+                	&& rlist.get(i).numberOfLiveNeighbors.equals(rlist.get(j).numberOfLiveNeighbors)
+                ) {
+                    error("Double rule", null)
+                }
+            }
+        }
 	}
 	
 	@Check
@@ -88,5 +88,22 @@ class LifeDslValidator extends AbstractLifeDslValidator {
 		if(rules.numberOfLiveNeighbors > 8) {
 			error("It is not possible to have more than 8 live neighbors",null)	
 		}
+	}
+	
+	@Check
+    def checkDieAlive(Model root) {
+        var rlist = root.rules // lists start at position 0
+        for (var i = 0; i < rlist.size; i++) {
+            for (var j = 0; j < rlist.size; j++) {
+                if (
+                	rlist.get(i).name.equals(DieAliveUnit::DIE)
+                	&& (rlist.get(j).name.equals(DieAliveUnit::LIVE) || rlist.get(j).name.equals(DieAliveUnit::BECOME_ALIVE))
+                	&& rlist.get(i).operator.equals(rlist.get(j).operator)
+                	&& rlist.get(i).numberOfLiveNeighbors.equals(rlist.get(j).numberOfLiveNeighbors)
+                ) {
+                    error("Die Alive rules should be different", null)
+                }
+            }
+        }
 	}
 }

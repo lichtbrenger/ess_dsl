@@ -40,12 +40,12 @@ public class LifeDslValidator extends AbstractLifeDslValidator {
           case DIE:
             if (((rules.getNumberOfLiveNeighbors() == 3) && 
               (Objects.equal(rules.getOperator(), OperatorUnit.L) || Objects.equal(rules.getOperator(), OperatorUnit.EQ)))) {
-              this.error("Neighbors less than or equal to 3 not\r\n                                allowed to die", null);
+              this.warning("Neighbors less than or equal to 3 not\r\n                                allowed to die", null);
             }
             break;
           case LIVE:
             if (((rules.getNumberOfLiveNeighbors() != 2) && (rules.getNumberOfLiveNeighbors() != 3))) {
-              this.error("Neighbors less than 2 and more than 3 not\r\n                                allowed to live", null);
+              this.warning("Neighbors less than 2 and more than 3 not\r\n                                allowed to live", null);
             }
             break;
           case BECOME_ALIVE:
@@ -87,6 +87,18 @@ public class LifeDslValidator extends AbstractLifeDslValidator {
     boolean _greaterThan = (_numberOfLiveNeighbors > 8);
     if (_greaterThan) {
       this.error("It is not possible to have more than 8 live neighbors", null);
+    }
+  }
+  
+  @Check
+  public void checkDieAlive(final Model root) {
+    EList<EvolutionRules> rlist = root.getRules();
+    for (int i = 0; (i < rlist.size()); i++) {
+      for (int j = 0; (j < rlist.size()); j++) {
+        if ((((rlist.get(i).getName().equals(DieAliveUnit.DIE) && (rlist.get(j).getName().equals(DieAliveUnit.LIVE) || rlist.get(j).getName().equals(DieAliveUnit.BECOME_ALIVE))) && rlist.get(i).getOperator().equals(rlist.get(j).getOperator())) && Integer.valueOf(rlist.get(i).getNumberOfLiveNeighbors()).equals(Integer.valueOf(rlist.get(j).getNumberOfLiveNeighbors())))) {
+          this.error("Die Alive rules should be different", null);
+        }
+      }
     }
   }
 }

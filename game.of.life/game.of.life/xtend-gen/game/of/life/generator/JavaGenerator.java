@@ -24,6 +24,11 @@ public class JavaGenerator {
     _builder.append("public class RulesOfLife {");
     _builder.newLine();
     _builder.append("\t");
+    _builder.append("static boolean addAliveCellsOnce = true;");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.newLine();
+    _builder.append("\t");
     _builder.append("public static void computeSurvivors(boolean[][] gameBoard, ArrayList<Point> survivingCells) {");
     _builder.newLine();
     _builder.append("\t\t");
@@ -94,19 +99,26 @@ public class JavaGenerator {
   
   public static CharSequence initialAlive(final Model root) {
     StringConcatenation _builder = new StringConcatenation();
+    _builder.append("if (addAliveCellsOnce) {");
+    _builder.newLine();
     {
       EList<Grid> _grids = root.getGrids();
       for(final Grid grid : _grids) {
+        _builder.append("  ");
         _builder.append("survivingCells.add(new Point(");
         int _row = grid.getRow();
-        _builder.append(_row);
-        _builder.append("-1, ");
+        _builder.append(_row, "  ");
+        _builder.append(", ");
         int _column = grid.getColumn();
-        _builder.append(_column);
-        _builder.append("-1));");
+        _builder.append(_column, "  ");
+        _builder.append("));");
         _builder.newLineIfNotEmpty();
       }
     }
+    _builder.append("  ");
+    _builder.append("addAliveCellsOnce = false;");
+    _builder.newLine();
+    _builder.append("}");
     _builder.newLine();
     return _builder;
   }

@@ -4,11 +4,23 @@ import java.awt.Point;
 import java.util.ArrayList;
  
 public class RulesOfLife {
+	static boolean addAliveCellsOnce = true;
+	
 	public static void computeSurvivors(boolean[][] gameBoard, ArrayList<Point> survivingCells) {
-		survivingCells.add(new Point(1-1, 1-1));
-		survivingCells.add(new Point(2-1, 2-1));
-		survivingCells.add(new Point(3-1, 3-1));
-		
+		if (addAliveCellsOnce) {
+		  survivingCells.add(new Point(1, 1));
+		  survivingCells.add(new Point(2, 1));
+		  survivingCells.add(new Point(2, 2));
+		  survivingCells.add(new Point(3, 1));
+		  survivingCells.add(new Point(3, 2));
+		  survivingCells.add(new Point(3, 3));
+		  survivingCells.add(new Point(4, 1));
+		  survivingCells.add(new Point(4, 2));
+		  survivingCells.add(new Point(4, 3));
+		  survivingCells.add(new Point(4, 4));
+		  survivingCells.add(new Point(5, 5));
+		  addAliveCellsOnce = false;
+		}
      	// Iterate through the array, follow game of life rules
     	 for (int i=1; i<gameBoard.length-1; i++) {
 	         for (int j=1; j<gameBoard[0].length-1; j++) {

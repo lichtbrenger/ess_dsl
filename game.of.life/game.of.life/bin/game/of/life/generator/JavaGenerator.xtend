@@ -11,6 +11,8 @@ import java.awt.Point;
 import java.util.ArrayList;
  
 public class RulesOfLife {
+	static boolean addAliveCellsOnce = true;
+	
 	public static void computeSurvivors(boolean[][] gameBoard, ArrayList<Point> survivingCells) {
 		«initialAlive(root)»
      	// Iterate through the array, follow game of life rules
@@ -36,10 +38,12 @@ public class RulesOfLife {
 	 '''
 	 
  def static initialAlive(Model root)'''
+if (addAliveCellsOnce) {
   «FOR grid: root.grids»
-  	survivingCells.add(new Point(«grid.row»-1, «grid.column»-1));
+  	survivingCells.add(new Point(«grid.row», «grid.column»));
   «ENDFOR» 
-  
+  addAliveCellsOnce = false;
+}
 '''
 
  def static evolutionRules(Model root)'''
